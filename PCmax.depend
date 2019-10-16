@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1571248915 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+	<iostream>
+	<fstream>
+	<Processor.h>
+
+1571255387 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
+	<string>
+
+1571253967 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
+	<fstream>
+	<iostream>
+	"Processor.h"
+
