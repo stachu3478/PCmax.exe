@@ -12,3 +12,30 @@
 	<iostream>
 	"Processor.h"
 
+1572362709 source:e:\local reposit\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<Processor.h>
+	<Generator.h>
+
+1572360910 e:\local reposit\pcmax.exe\include\processor.h
+	<string>
+
+1572361215 source:e:\local reposit\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"Processor.h"
+
+1572359679 source:e:\local reposit\pcmax.exe\generator.c
+
+1572366634 source:e:\local reposit\pcmax.exe\src\generator.cpp
+	"Generator.h"
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+
+1572366065 e:\local reposit\pcmax.exe\include\generator.h
+
