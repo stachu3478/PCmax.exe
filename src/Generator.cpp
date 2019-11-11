@@ -1,10 +1,11 @@
-#include "Generator.h"
 #include <fstream>
 #include <stdlib.h>
-#include <time.h>
 #include <iostream>
 #include <cstdio>
 #include <ctime>
+
+#include "Generator.h"
+
 using namespace std;
 
 Generator::Generator(int proc_n, int task_n)

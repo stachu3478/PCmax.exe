@@ -40,6 +40,8 @@ class Processor
         /// Solves problem and sends the most overloaded processor to the stdout
         /// \param file - path to file to read from
         static void solve(char* file);
+        /// Same as solve but sorts the array
+        static void solveSorted(char* file);
 
     protected:
 

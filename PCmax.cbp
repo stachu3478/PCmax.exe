@@ -39,9 +39,11 @@
 		</Unit>
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/Processor.h" />
+		<Unit filename="include/sort.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/Processor.cpp" />
+		<Unit filename="src/sort.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

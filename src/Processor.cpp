@@ -1,5 +1,7 @@
 #include <fstream>
 #include <iostream>
+
+#include "sort.h"
 #include "Processor.h"
 
 using namespace std;
@@ -82,6 +84,7 @@ void Processor::solve(char* file)
     cout << nProcessors << endl;
     setNumberProcessors(nProcessors, nTasks);
     cout << "Processors defined\n";
+
     int counter = 0;
     for (int i = 0; i < s_nProcessors && i < s_nTasks; i++, counter++)
     {
@@ -95,6 +98,39 @@ void Processor::solve(char* file)
         unsigned int task;
         source >> task;
         assignTask(task);
+        counter++;
+    };
+    unsigned int solution = s_processors[findMax()].m_weight;
+    cout << "The solution is: " << solution << endl;
+}
+
+void Processor::solveSorted(char* file)
+{
+    ifstream source(file);
+    cout << "File opened\n";
+    int nProcessors = 0, nTasks = 0;
+    source >> nProcessors;
+    source >> nTasks;
+    cout << nProcessors << endl;
+    setNumberProcessors(nProcessors, nTasks);
+    cout << "Processors defined\n";
+
+    unsigned int tasks[nTasks];
+    for (unsigned int i = 0; i < s_nTasks; i++)
+    {
+        source >> tasks[i];
+    }
+    sortItems(tasks, s_nTasks);
+
+    int counter = 0;
+    for (int i = 0; i < s_nProcessors && i < s_nTasks; i++, counter++)
+    {
+        s_processors[i] += tasks[i];
+    };
+    cout << "First tasks assigned\n";
+    while (counter < s_nTasks)
+    {
+        assignTask(tasks[counter]);
         counter++;
     };
     unsigned int solution = s_processors[findMax()].m_weight;
