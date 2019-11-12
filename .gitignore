@@ -26,6 +26,3 @@
 *.exe
 *.out
 *.app
-
-# Generated instances
-gen_file.txt

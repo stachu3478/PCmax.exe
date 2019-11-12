@@ -1,24 +1,15 @@
 # depslib dependency file v1.0
-1573501174 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+1571248915 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
-	<stdlib.h>
-	<time.h>
-	<cstdio>
-	<ctime>
-	<string>
-	<cstring>
-	"sort.h"
-	"Processor.h"
-	"Generator.h"
+	<Processor.h>
 
-1573495289 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
+1571255917 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
 	<string>
 
-1573496160 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
+1571253967 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
 	<fstream>
 	<iostream>
-	"sort.h"
 	"Processor.h"
 
 1572362709 source:e:\local reposit\pcmax.exe\main.cpp
@@ -48,9 +39,27 @@
 
 1572366065 e:\local reposit\pcmax.exe\include\generator.h
 
-1573467347 source:c:\users\stach\desktop\pcmax\pcmax\generator.c
+1573503002 source:e:\local reposit\pcmax_new\generator.c
 
-1573501926 source:c:\users\stach\desktop\pcmax\pcmax\src\generator.cpp
+1573569877 source:e:\local reposit\pcmax_new\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+
+1573502136 e:\local reposit\pcmax_new\include\sort.h
+
+1573502136 e:\local reposit\pcmax_new\include\processor.h
+	<string>
+
+1573503002 e:\local reposit\pcmax_new\generator.h
+
+1573502136 source:e:\local reposit\pcmax_new\src\generator.cpp
 	<fstream>
 	<stdlib.h>
 	<iostream>
@@ -58,11 +67,15 @@
 	<ctime>
 	"Generator.h"
 
-1573470027 c:\users\stach\desktop\pcmax\pcmax\include\generator.h
+1573502136 e:\local reposit\pcmax_new\include\generator.h
 
-1573496274 c:\users\stach\desktop\pcmax\pcmax\include\sort.h
+1573502136 source:e:\local reposit\pcmax_new\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
 
-1573501903 source:c:\users\stach\desktop\pcmax\pcmax\src\sort.cpp
+1573502136 source:e:\local reposit\pcmax_new\src\sort.cpp
 	<iostream>
 	<sort.h>
 	<ctime>

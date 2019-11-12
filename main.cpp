@@ -1,8 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
 #include <time.h>
-#include <cstdio>
 #include <ctime>
 
 #include <string>
@@ -71,7 +69,7 @@ int main(int argc, char* argv[])
             return 0;
         }
 
-        printf( "Czas wykonywania: %lu ms\n", clock() - start );
+        cout<<"Czas wykonywania: "<< clock() - start <<" ms"<<endl;
     }
     else
     {
