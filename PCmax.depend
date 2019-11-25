@@ -1,15 +1,25 @@
 # depslib dependency file v1.0
-1571248915 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+1574719167 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
-	<Processor.h>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
 
-1571255917 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
+1573495289 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
 	<string>
 
-1571253967 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
+1573496160 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
 	<fstream>
 	<iostream>
+	"sort.h"
 	"Processor.h"
 
 1572362709 source:e:\local reposit\pcmax.exe\main.cpp
@@ -80,4 +90,38 @@
 	<sort.h>
 	<ctime>
 	<stdlib.h>
+
+1574710589 source:c:\users\stach\desktop\pcmax\pcmax\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1574710589 c:\users\stach\desktop\pcmax\pcmax\include\generator.h
+
+1573496274 c:\users\stach\desktop\pcmax\pcmax\include\sort.h
+
+1573501950 source:c:\users\stach\desktop\pcmax\pcmax\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574708700 source:c:\users\stach\desktop\pcmax\pcmax\generator.c
+
+1574719185 source:c:\users\stach\desktop\pcmax\pcmax\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1574718888 c:\users\stach\desktop\pcmax\pcmax\include\tgraph.h
+	"AntNode.h"
+
+1574708700 c:\users\stach\desktop\pcmax\pcmax\generator.h
+
+1574718762 source:c:\users\stach\desktop\pcmax\pcmax\src\antnode.cpp
+	"AntNode.h"
+
+1574718762 c:\users\stach\desktop\pcmax\pcmax\include\antnode.h
 

@@ -3,12 +3,17 @@
 #include <time.h>
 #include <ctime>
 
+#include <stdlib.h>
+#include <cstdio>
+
 #include <string>
 #include <cstring>
 
 #include "sort.h"
 #include "Processor.h"
 #include "Generator.h"
+
+#include "TGraph.h"
 
 using namespace std;
 
@@ -17,13 +22,14 @@ void printUsage(char* name)
     cout << "Usage: " << name << " <subcommand>\n"
         << "Where subcommand could be the following:\n"
         << "generate <processors> <tasks> - creates new instance of problem for the algorithm with specified number of tasks and processors\n"
-        << "It generates random number of processors and tasks from 1 to 1000 by default\n"
+        << "    It generates random number of processors and tasks from 1 to 1000 by default\n"
         << "solve <file> <type> - solves instances, where:\n"
-        << "<file> is the name of the file in the directory for instance data\n"
-        << "\"m30.txt\" by default\n"
-        << "<type> algorithm type you want to use. Available ones are:\n"
-        << "greedy - Tries to solve in the fastest way. Used by default.\n"
-        << "presort - Sorts the array of tasks and then runs greedy algorithm.\n";
+        << "    <file> is the name of the file in the directory for instance data\n"
+        << "    \"m30.txt\" by default\n"
+        << "    <type> algorithm type you want to use. Available ones are:\n"
+        << "    greedy - Tries to solve in the fastest way. Used by default.\n"
+        << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
+        << "test - tests new feature of topological graphs";
 }
 
 int main(int argc, char* argv[])
@@ -71,8 +77,22 @@ int main(int argc, char* argv[])
 
         cout<<"Czas wykonywania: "<< clock() - start <<" ms"<<endl;
     }
-    else
+    else if (cmd == "test" || cmd == "t")
     {
+        TGraph<int> graph(11); // A graph with 10 nodes
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+        graph.expand(5);
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+        for (int i = 0; i < 10; i++)
+        {
+            TGraph<int> grap = graph[i];
+            cout << "Graph size " << grap.GetSize() << " and is " << (grap.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+        }
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+        graph.collapse();
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+    }
+    else {
         printUsage(argv[0]);
     }
 
