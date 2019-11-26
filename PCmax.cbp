@@ -37,12 +37,16 @@
 		<Unit filename="generator.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/Processor.h" />
+		<Unit filename="include/TGraph.h" />
 		<Unit filename="include/sort.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/Processor.cpp" />
+		<Unit filename="src/TGraph.cpp" />
 		<Unit filename="src/sort.cpp" />
 		<Extensions>
 			<code_completion />
