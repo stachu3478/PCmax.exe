@@ -14,6 +14,7 @@
 #include "Generator.h"
 
 #include "TGraph.h"
+#include "NestLevel.h"
 
 using namespace std;
 
@@ -29,7 +30,8 @@ void printUsage(char* name)
         << "    <type> algorithm type you want to use. Available ones are:\n"
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
-        << "test - tests new feature of topological graphs";
+        << "test - tests new feature of topological graphs"
+        << "test2 - tests another feature of topological graphs";
 }
 
 int main(int argc, char* argv[])
@@ -78,6 +80,21 @@ int main(int argc, char* argv[])
         cout<<"Czas wykonywania: "<< clock() - start <<" ms"<<endl;
     }
     else if (cmd == "test" || cmd == "t")
+    {
+        TGraph<int> graph(11); // A graph with 10 nodes
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+        graph.expand(5);
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+        for (int i = 0; i < 10; i++)
+        {
+            TGraph<int> grap = graph[i];
+            cout << "Graph size " << grap.GetSize() << " and is " << (grap.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+        }
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+        graph.collapse();
+        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
+    }
+    else if (cmd == "test2" || cmd == "t2")
     {
         TGraph<int> graph(11); // A graph with 10 nodes
         cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;

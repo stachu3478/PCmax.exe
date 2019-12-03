@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1574719167 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+1575408481 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -12,6 +12,7 @@
 	"Processor.h"
 	"Generator.h"
 	"TGraph.h"
+	"NestLevel.h"
 
 1573495289 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
 	<string>
@@ -120,8 +121,11 @@
 
 1574708700 c:\users\stach\desktop\pcmax\pcmax\generator.h
 
-1574718762 source:c:\users\stach\desktop\pcmax\pcmax\src\antnode.cpp
+1575408528 source:c:\users\stach\desktop\pcmax\pcmax\src\antnode.cpp
 	"AntNode.h"
 
-1574718762 c:\users\stach\desktop\pcmax\pcmax\include\antnode.h
+1575408526 c:\users\stach\desktop\pcmax\pcmax\include\antnode.h
+
+1575409162 c:\users\stach\desktop\pcmax\pcmax\include\nestlevel.h
+	"AntNode.h"
 

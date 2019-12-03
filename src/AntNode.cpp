@@ -3,15 +3,16 @@
 AntNode::AntNode()
 {}
 
-AntNode::AntNode(int nodes, int time)
+AntNode::AntNode(unsigned int procId)
 {
-    // feromon = 0;
-    // feromonTime = time;
+    m_ProcessorId = procId;
+    m_AntiFeromon = 0;
+    m_FeromonTime = 0;
 }
 
-int AntNode::assignFeromon(int amount, int index)
+int AntNode::vapeFeromon(unsigned int cycle)
 {
-
+    return m_AntiFeromon -= (int)(m_FeromonTime - (m_FeromonTime = cycle));
 }
 
 AntNode::~AntNode()

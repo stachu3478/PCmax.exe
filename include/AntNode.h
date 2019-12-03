@@ -6,20 +6,19 @@ class AntNode
     public:
         /** Default constructor */
         AntNode();
-        AntNode(int nodes, int time);
+        AntNode(unsigned int procId);
         /** Default destructor */
         virtual ~AntNode();
 
-        AntNode pickRandom();
-        int assignFeromon(int a, int i);
-        int vapeFeromon(int a, int i);
+        int assignFeromon(int f) { return m_AntiFeromon = -f; };
+        int vapeFeromon(unsigned int cycle);
 
     protected:
 
     private:
-        int m_feromon;
-        int m_feromonTime;
-        int m_maxFeromonNode;
+        unsigned int m_ProcessorId;
+        int m_AntiFeromon;
+        unsigned int m_FeromonTime;
 };
 
 #endif // ANTNODE_H
