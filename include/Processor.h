@@ -41,7 +41,7 @@ class Processor
         /// \param file - path to file to read from
         static void solve(char* file);
         /// Same as solve but sorts the array
-        static void solveSorted(char* file);
+        static unsigned int*& solveSorted(char* file, unsigned int& sol);
 
     protected:
 

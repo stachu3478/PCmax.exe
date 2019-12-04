@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1575408481 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+1575486583 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -13,11 +13,12 @@
 	"Generator.h"
 	"TGraph.h"
 	"NestLevel.h"
+	"AntSolver.h"
 
-1573495289 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
+1575493283 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
 	<string>
 
-1573496160 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
+1575493283 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
 	<fstream>
 	<iostream>
 	"sort.h"
@@ -126,6 +127,37 @@
 
 1575408526 c:\users\stach\desktop\pcmax\pcmax\include\antnode.h
 
-1575409162 c:\users\stach\desktop\pcmax\pcmax\include\nestlevel.h
+1575491984 c:\users\stach\desktop\pcmax\pcmax\include\nestlevel.h
 	"AntNode.h"
+
+1575491984 source:c:\users\stach\desktop\pcmax\pcmax\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575492330 source:c:\users\stach\desktop\pcmax\pcmax\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575492002 c:\users\stach\desktop\pcmax\pcmax\include\ant.h
+	"NestLevel.h"
+
+1575493156 c:\users\stach\desktop\pcmax\pcmax\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1575493283 source:c:\users\stach\desktop\pcmax\pcmax\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
 

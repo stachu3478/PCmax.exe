@@ -15,6 +15,7 @@
 
 #include "TGraph.h"
 #include "NestLevel.h"
+#include "AntSolver.h"
 
 using namespace std;
 
@@ -30,20 +31,26 @@ void printUsage(char* name)
         << "    <type> algorithm type you want to use. Available ones are:\n"
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
-        << "test - tests new feature of topological graphs"
-        << "test2 - tests another feature of topological graphs";
+        << "    aco - Uses graph system and ant behavioral system.\n"
+        << "    acosort - aco with task pre-sorting.\n"
+        << "test - tests new feature of topological graphs\n"
+        << "test2 - tests another feature of topological graphs\n"
+        << "test3 - integer allocation test\n";
 }
 
 int main(int argc, char* argv[])
 {
+    string cmd;
     if (argc <= 1)
     {
         // someTest();
         printUsage(argv[0]);
-        return 0;
+        cmd = "s";
+        //return 0;
     }
-
-    string cmd = argv[1];
+    else {
+        cmd = argv[1];
+    };
     ///////////// Generacja pliku //////////////
     if (cmd == "generate" || cmd == "g")
     {
@@ -65,12 +72,16 @@ int main(int argc, char* argv[])
     {
         char* file = "m30.txt";
         if (argc > 2) file = argv[2];
-        string type = "greedy";
+        string type = "aco";
         if (argc > 3) type = argv[3];
         clock_t start = clock();
 
+        unsigned int o = 0;
+        unsigned int& O = o;
+
         if (type == "greedy") Processor::solve(file);
-        else if (type == "presort") Processor::solveSorted(file);
+        else if (type == "presort") Processor::solveSorted(file, O);
+        else if (type == "aco") new AntSolver(file);
         else
         {
             printUsage(argv[0]);
@@ -96,18 +107,15 @@ int main(int argc, char* argv[])
     }
     else if (cmd == "test2" || cmd == "t2")
     {
-        TGraph<int> graph(11); // A graph with 10 nodes
-        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
-        graph.expand(5);
-        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+        NestLevel::test();
+    }
+    else if (cmd == "test3" || cmd == "t3")
+    {
+        int* arr = new int[10];
         for (int i = 0; i < 10; i++)
         {
-            TGraph<int> grap = graph[i];
-            cout << "Graph size " << grap.GetSize() << " and is " << (grap.IsExpanded() ? "expanded" : "collapsed") << " Value " << graph.GetValue() << endl;
+            cout << arr[i] << endl;
         }
-        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
-        graph.collapse();
-        cout << "Graph size " << graph.GetSize() << " and is " << (graph.IsExpanded() ? "expanded" : "collapsed") << endl;
     }
     else {
         printUsage(argv[0]);

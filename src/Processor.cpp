@@ -71,7 +71,9 @@ unsigned int Processor::findMax()
 
 unsigned int Processor::assignTask(const unsigned int task)
 {
-    return s_processors[Processor::findMin()] += task;
+    unsigned int minp = Processor::findMin();
+    s_processors[minp] += task;
+    return minp;
 }
 
 void Processor::solve(char* file)
@@ -104,7 +106,7 @@ void Processor::solve(char* file)
     cout << "The solution is: " << solution << endl;
 }
 
-void Processor::solveSorted(char* file)
+unsigned int*& Processor::solveSorted(char* file, unsigned int& sol)
 {
     ifstream source(file);
     cout << "File opened\n";
@@ -114,6 +116,8 @@ void Processor::solveSorted(char* file)
     cout << nProcessors << endl;
     setNumberProcessors(nProcessors, nTasks);
     cout << "Processors defined\n";
+
+    unsigned int* procIds = new unsigned int[nTasks];
 
     unsigned int tasks[nTasks];
     for (unsigned int i = 0; i < s_nTasks; i++)
@@ -126,13 +130,16 @@ void Processor::solveSorted(char* file)
     for (int i = 0; i < s_nProcessors && i < s_nTasks; i++, counter++)
     {
         s_processors[i] += tasks[i];
+        procIds[counter] = counter;
     };
     cout << "First tasks assigned\n";
     while (counter < s_nTasks)
     {
-        assignTask(tasks[counter]);
-        counter++;
+        procIds[counter] = assignTask(tasks[counter++]);
     };
     unsigned int solution = s_processors[findMax()].m_weight;
     cout << "The solution is: " << solution << endl;
+
+    unsigned int*& procRef = procIds;
+    return procRef;
 }

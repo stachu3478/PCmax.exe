@@ -37,14 +37,18 @@
 		<Unit filename="generator.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
+		<Unit filename="include/AntSolver.h" />
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
 		<Unit filename="include/sort.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
+		<Unit filename="src/AntSolver.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />
