@@ -38,18 +38,17 @@
 	<iostream>
 	"Processor.h"
 
-1572359679 source:e:\local reposit\pcmax.exe\generator.c
+1574719386 source:e:\local reposit\pcmax.exe\generator.c
 
-1572366634 source:e:\local reposit\pcmax.exe\src\generator.cpp
-	"Generator.h"
+1574719386 source:e:\local reposit\pcmax.exe\src\generator.cpp
 	<fstream>
 	<stdlib.h>
-	<time.h>
 	<iostream>
 	<cstdio>
 	<ctime>
+	"Generator.h"
 
-1572366065 e:\local reposit\pcmax.exe\include\generator.h
+1574719386 e:\local reposit\pcmax.exe\include\generator.h
 
 1573503002 source:e:\local reposit\pcmax_new\generator.c
 
@@ -160,4 +159,21 @@
 	"Processor.h"
 	"NestLevel.h"
 	"Ant.h"
+
+1574719386 source:e:\local reposit\pcmax.exe\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574719386 e:\local reposit\pcmax.exe\include\sort.h
+
+1574719386 source:e:\local reposit\pcmax.exe\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1574719386 e:\local reposit\pcmax.exe\include\tgraph.h
+	"AntNode.h"
+
+1575986386 e:\local reposit\pcmax.exe\include\antnode.h
 
