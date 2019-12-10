@@ -55,6 +55,8 @@ AntSolver::AntSolver(char* file)
     unsigned int& solRef = greedySolution;
     unsigned int* cond = Processor::solveSorted(file, solRef);
 
+    NestLevel::FEROMON_INTEGRITY = (1.0 - (1.0 / nTasks)) * 1000;
+    cout << NestLevel::FEROMON_INTEGRITY << endl;
     m_Graph = new NestLevel(nTasks - 1, nProcessors, nTasks - 1);
     NestLevel* t = m_Graph;
     int sum = 0;

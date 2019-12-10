@@ -161,3 +161,84 @@
 	"NestLevel.h"
 	"Ant.h"
 
+1575983325 source:d:\skrypty\pcmax.exe\generator.c
+
+1575983325 source:d:\skrypty\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\sort.h
+
+1575983325 d:\skrypty\pcmax.exe\include\processor.h
+	<string>
+
+1575983325 d:\skrypty\pcmax.exe\generator.h
+
+1575983325 d:\skrypty\pcmax.exe\include\tgraph.h
+	"AntNode.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\antnode.h
+
+1575983325 d:\skrypty\pcmax.exe\include\nestlevel.h
+	"AntNode.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\ant.h
+	"NestLevel.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\antnode.cpp
+	"AntNode.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\generator.h
+
+1575983325 source:d:\skrypty\pcmax.exe\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1575983325 source:d:\skrypty\pcmax.exe\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
