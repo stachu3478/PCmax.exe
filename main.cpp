@@ -16,6 +16,7 @@
 #include "TGraph.h"
 #include "NestLevel.h"
 #include "AntSolver.h"
+#include "zach2.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ void printUsage(char* name)
         << "    \"m30.txt\" by default\n"
         << "    <type> algorithm type you want to use. Available ones are:\n"
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
+        << "    greedy2 - Some other point of view.\n"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
         << "    aco - Uses graph system and ant behavioral system.\n"
         << "    acosort - aco with task pre-sorting.\n"
@@ -72,7 +74,7 @@ int main(int argc, char* argv[])
     {
         char* file = "m30.txt";
         if (argc > 2) file = argv[2];
-        string type = "aco";
+        string type = "greedy2";
         if (argc > 3) type = argv[3];
         clock_t start = clock();
 
@@ -82,7 +84,8 @@ int main(int argc, char* argv[])
         if (type == "greedy") Processor::solve(file);
         else if (type == "presort") Processor::solveSorted(file, O);
         else if (type == "aco") new AntSolver(file);
-        else
+        else if (type == "greedy2") new zach2(file, false);
+        else if (type == "greedy3") new zach2(file, true);
         {
             printUsage(argv[0]);
             return 0;

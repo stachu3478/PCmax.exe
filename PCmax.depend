@@ -163,7 +163,7 @@
 
 1575983325 source:d:\skrypty\pcmax.exe\generator.c
 
-1575983325 source:d:\skrypty\pcmax.exe\main.cpp
+1576139947 source:d:\skrypty\pcmax.exe\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -178,6 +178,7 @@
 	"TGraph.h"
 	"NestLevel.h"
 	"AntSolver.h"
+	"zach2.h"
 
 1575983325 d:\skrypty\pcmax.exe\include\sort.h
 
@@ -241,4 +242,24 @@
 1575983325 source:d:\skrypty\pcmax.exe\src\tgraph.cpp
 	"TGraph.h"
 	<iostream>
+
+1575984070 source:d:\skrypty\pcmax.exe\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1576139642 source:d:\skrypty\pcmax.exe\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1576138616 d:\skrypty\pcmax.exe\include\zach2.h
 
