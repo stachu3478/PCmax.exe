@@ -17,6 +17,7 @@
 #include "NestLevel.h"
 #include "AntSolver.h"
 #include "zach2.h"
+#include "AcoFlat.h"
 
 using namespace std;
 
@@ -74,7 +75,7 @@ int main(int argc, char* argv[])
     {
         char* file = "m30.txt";
         if (argc > 2) file = argv[2];
-        string type = "greedy2";
+        string type = "acoflat";
         if (argc > 3) type = argv[3];
         clock_t start = clock();
 
@@ -86,6 +87,7 @@ int main(int argc, char* argv[])
         else if (type == "aco") new AntSolver(file);
         else if (type == "greedy2") new zach2(file, false);
         else if (type == "greedy3") new zach2(file, true);
+        else if (type == "acoflat") new AcoFlat(file);
         {
             printUsage(argv[0]);
             return 0;

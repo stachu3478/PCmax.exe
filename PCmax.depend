@@ -263,3 +263,115 @@
 
 1576138616 d:\skrypty\pcmax.exe\include\zach2.h
 
+1574708700 source:c:\users\stach\desktop\repo\pcmax\pcmax\generator.c
+
+1575492330 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575492002 c:\users\stach\desktop\repo\pcmax\pcmax\include\ant.h
+	"NestLevel.h"
+
+1575491984 c:\users\stach\desktop\repo\pcmax\pcmax\include\nestlevel.h
+	"AntNode.h"
+
+1575408526 c:\users\stach\desktop\repo\pcmax\pcmax\include\antnode.h
+
+1575408528 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antnode.cpp
+	"AntNode.h"
+
+1574710589 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1574710589 c:\users\stach\desktop\repo\pcmax\pcmax\include\generator.h
+
+1575491984 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575493283 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1573496274 c:\users\stach\desktop\repo\pcmax\pcmax\include\sort.h
+
+1575493283 c:\users\stach\desktop\repo\pcmax\pcmax\include\processor.h
+	<string>
+
+1573501950 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574719185 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1574718888 c:\users\stach\desktop\repo\pcmax\pcmax\include\tgraph.h
+	"AntNode.h"
+
+1577460779 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+	"zach2.h"
+	"AcoFlat.h"
+
+1574708700 c:\users\stach\desktop\repo\pcmax\pcmax\generator.h
+
+1575493156 c:\users\stach\desktop\repo\pcmax\pcmax\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1577445690 c:\users\stach\desktop\repo\pcmax\pcmax\include\zach2.h
+
+1577445690 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1577460680 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1577461286 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\acoflat.cpp
+	"AcoFlat.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+
+1577460609 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
+

@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="solve m30.txt acoflat" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -21,6 +22,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="solve m30.txt acoflat" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
@@ -37,6 +39,7 @@
 		<Unit filename="generator.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/AcoFlat.h" />
 		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
@@ -47,6 +50,7 @@
 		<Unit filename="include/sort.h" />
 		<Unit filename="include/zach2.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AcoFlat.cpp" />
 		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />

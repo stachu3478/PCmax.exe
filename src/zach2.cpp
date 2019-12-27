@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void bind2(int p1, int p2, unsigned int m, unsigned int tasks*, unsigned int pBind*, unsigned int s1, unsigned int s2)
+/*void bind2(int p1, int p2, unsigned int m, unsigned int* tasks, unsigned int* pBind, unsigned int s1, unsigned int s2)
 {
     int sum1 = 0, sum2 = 0;
     for (unsigned int j = 0; j < nTasks; j++)
@@ -25,7 +25,7 @@ void bind2(int p1, int p2, unsigned int m, unsigned int tasks*, unsigned int pBi
     }
     sumP[i] /= i;
     cout << sum << " " << sumP[i] << endl;
-}
+}*/
 
 zach2::zach2(char* file, bool v3)
 {
