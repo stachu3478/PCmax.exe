@@ -17,10 +17,14 @@ class AcoFlat
         int findMax();
         int pickAvailableNextJob(int j);
         int assignJob(int p, int j);
+        int dryRun(int s);
+        int findNextJob(int j);
 
     protected:
 
     private:
+        int vape;
+        int totalTime;
         int* edgeFeromon;
         int nEdges;
         int* edgesRemaining;
@@ -28,6 +32,7 @@ class AcoFlat
 
         int nJobs;
         int* jobTime;
+        int* jobIds;
         int nJobsRemaining;
 
         int nProcs;
