@@ -87,6 +87,8 @@ void AcoFlat::verify()
         {
             cout << jobQueue[i] << " ";
         };
+        cout << endl;
+        jobs->dump();
         throw exception();
     }
 }
@@ -109,9 +111,8 @@ int AcoFlat::standardIteration(int n)
     if (solution < bestRecord) {
         bestRecord = solution;
         cout << "New crazy record: " << solution << endl;
-        //verify();
+        verify();
     }
-    verify();
     return solution;
 }
 
@@ -134,14 +135,15 @@ int AcoFlat::findNextJob(int j)
     int bestId = 0;
     for (int i = 0; i < jobs->getRemFruits(); i++)
     {
-        int idx = mat2Get(j, i, nJobs);
+        int idx = mat2Get(j, jobs->show(i), nJobs);
         if (edgeFeromon[idx] > bestNode)
         {
             bestNode = edgeFeromon[idx];
             bestId = i;
         }
     }
-    int job = edgesRemaining[bestId];
+    int job = jobs->pickArr(bestId);
+    // cout << bestId << " " << job << endl;
     return job;
 }
 
@@ -154,7 +156,7 @@ int AcoFlat::dryRun(int start)
     for (int i = 0; i < nJobs; i++)
     {
         int procId = findMin();
-        jobQueue[i] = assignJob(procId, currentJob);
+        jobQueue[i] = assignJobId(procId, currentJob);
         currentJob = findNextJob(currentJob);
     }
 
@@ -169,14 +171,14 @@ int AcoFlat::wetRun(int start) {
     for (int i = 0; i < nProcs; i++)
         procTotalTime[i] = 0;
     jobs->reset();
-    int currentJob = start;
-    for (int i = 0; i < nJobs; i++)
+    int currentJob = jobs->pick(start);
+    jobQueue[0] = assignJobId(0, currentJob);
+    for (int i = 1; i < nJobs; i++)
     {
         int procId = findMin();
-        jobQueue[i] = assignJob(procId, currentJob);
         currentJob = findNextJob(currentJob);
+        jobQueue[i] = assignJobId(procId, currentJob);
     }
-    srand(time(NULL));
 
     int solution = procTotalTime[findMax()];
     if (solution < bestAcoRecord)

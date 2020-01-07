@@ -14,8 +14,11 @@ class FruitPicker
 
         int pick();
         int pick(int id);
+        int pickArr(int id);
+        int show(int arrId) { return fruits[arrId]; };
         int getRemFruits() { return remFruits; };
         void reset() { remFruits = nFruits; };
+        void dump();
 
     protected:
 
@@ -23,6 +26,8 @@ class FruitPicker
         int* fruits;
         int remFruits;
         int nFruits;
+
+        int pickWild(int index);
 };
 
 #endif // FRUITPICKER_H

@@ -16,11 +16,8 @@ FruitPicker::FruitPicker(int n)
     remFruits = n;
 }
 
-FruitPicker::pick()
+int FruitPicker::pickWild(int index)
 {
-    if (remFruits == 0)
-        throw NoFruitsException();
-    int index = rand() % remFruits;
     int fruit = fruits[index];
     int hideIndex = --remFruits;
     fruits[index] = fruits[hideIndex];
@@ -28,19 +25,36 @@ FruitPicker::pick()
     return fruit;
 }
 
-FruitPicker::pick(int fruit)
+int FruitPicker::pickArr(int index)
+{
+    if (remFruits <= index)
+        throw FruitNotFoundExcecption();
+    return pickWild(index);
+}
+
+int FruitPicker::pick()
+{
+    if (remFruits == 0)
+        throw NoFruitsException();
+    int index = rand() % remFruits;
+    return pickWild(index);
+}
+
+int FruitPicker::pick(int fruit)
 {
     for (int index = 0; index < nFruits; index++)
-    {
         if (fruits[index] == fruit)
-        {
-            int hideIndex = remFruits - 1;
-            fruits[index] = fruits[hideIndex];
-            fruits[hideIndex] = fruit;
-            return fruit;
-        }
-    }
+            return pickWild(index);
     throw FruitNotFoundExcecption();
+}
+
+void FruitPicker::dump()
+{
+    for (int i = 0; i < nFruits; i++)
+    {
+        cout << fruits[i] << " ";
+    }
+    cout << endl << "Rem: " << remFruits << endl;
 }
 
 void FruitPicker::test()
@@ -56,6 +70,12 @@ void FruitPicker::test()
     for (int i = 0; i < 14; i++)
     {
         cout << picker->pick() << endl;
+    }
+    cout << "----" << endl;
+    picker->reset();
+    for (int i = 14; i >= 0; i--)
+    {
+        cout << picker->pickArr(rand() % (i + 1)) << endl;
     }
 }
 
