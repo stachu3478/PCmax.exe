@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve m30.txt acoflat" />
+				<Option parameters="solve m50n1000.txt acoflat" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />

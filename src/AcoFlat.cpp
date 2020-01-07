@@ -188,7 +188,7 @@ int AcoFlat::wetRun(int start) {
         verify();
     }
     for (int j = 0; j < nJobs - 1; j++)
-        edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += totalTime - solution;
+        edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += worstGreedy - solution;
         //nEdgesRemaining--;
     return solution;
 }
@@ -213,6 +213,7 @@ AcoFlat::AcoFlat(char* file)
         totalTime += jobTime[i];
         jobIds[i] = i;
     }
+    worstGreedy = (totalTime / nProcs + 1) * 2;
 
     procTotalTime = new int[nProcs];
     jobQueue = new int[nJobs];

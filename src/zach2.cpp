@@ -53,6 +53,7 @@ zach2::zach2(char* file, bool v3)
     {
         int sum = 0;
         sumP[i] = 0;
+        // int bestAdd = 99999999;
         for (unsigned int j = 0; j < nTasks; j++)
         {
             if (pBind[j] != 0) continue;
@@ -61,7 +62,12 @@ zach2::zach2(char* file, bool v3)
             {
                 sumP[i] += add * i;
                 pBind[j] = i;
-            } else sum += add;
+                // int loss = sum + add - sumP[i];
+            } else
+            {
+                sum += add;
+                // bestAdd = 99999999;
+            }
         }
         sumP[i] /= i;
         cout << sum << " " << sumP[i] << endl;

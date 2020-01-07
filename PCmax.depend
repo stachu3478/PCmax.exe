@@ -322,7 +322,7 @@
 1574718888 c:\users\stach\desktop\repo\pcmax\pcmax\include\tgraph.h
 	"AntNode.h"
 
-1577460779 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
+1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -339,6 +339,7 @@
 	"AntSolver.h"
 	"zach2.h"
 	"AcoFlat.h"
+	"FruitPicker.h"
 
 1574708700 c:\users\stach\desktop\repo\pcmax\pcmax\generator.h
 
@@ -373,7 +374,8 @@
 	<fstream>
 	<iostream>
 
-1577481728 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
+1578428787 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
+	"FruitPicker.h"
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
 
@@ -493,6 +495,13 @@
 1578419192 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
 
 1578419331 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
+	<iostream>
+	<stdlib.h>
+	"FruitPicker.h"
+
+1578428232 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitpicker.h
+
+1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitpicker.cpp
 	<iostream>
 	<stdlib.h>
 	"FruitPicker.h"

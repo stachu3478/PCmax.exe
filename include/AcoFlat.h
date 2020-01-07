@@ -46,6 +46,8 @@ class AcoFlat
         int* jobQueue;
         int bestRecord;
         int bestAcoRecord;
+
+        int worstGreedy;
 };
 
 #endif // ACOFLAT_H
