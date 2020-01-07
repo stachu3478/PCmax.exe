@@ -1,6 +1,7 @@
 #ifndef ACOFLAT_H
 #define ACOFLAT_H
 
+#include "FruitPicker.h"
 
 class AcoFlat
 {
@@ -15,9 +16,14 @@ class AcoFlat
 
         int findMin();
         int findMax();
+        int pickJob(int j);
+        int pickRandomJob();
         int pickAvailableNextJob(int j);
         int assignJob(int p, int j);
+        int assignJobId(int p, int id);
+        void verify();
         int dryRun(int s);
+        int wetRun(int s);
         int findNextJob(int j);
 
     protected:
@@ -33,7 +39,7 @@ class AcoFlat
         int nJobs;
         int* jobTime;
         int* jobIds;
-        int nJobsRemaining;
+        FruitPicker* jobs;
 
         int nProcs;
         int* procTotalTime;

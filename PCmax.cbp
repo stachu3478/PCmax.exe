@@ -22,7 +22,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve m30.txt acoflat" />
+				<Option parameters="test4" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
@@ -43,6 +43,7 @@
 		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
+		<Unit filename="include/FruitPicker.h" />
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />
+		<Unit filename="src/FruitPicker.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />

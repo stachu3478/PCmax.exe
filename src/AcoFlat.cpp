@@ -5,6 +5,8 @@
 #include <fstream>
 #include <iostream>
 
+#include "FruitPicker.h"
+
 using namespace std;
 
 int mat2Get(int x, int y, int n)
@@ -44,6 +46,7 @@ int AcoFlat::findMax()
     return maxIndex;
 }
 
+// Takes edge remaining
 int AcoFlat::pickAvailableNextJob(int j)
 {
     int edgeIndex = mat2Get(j, rand() % nEdgesRemaining, nJobs);
@@ -58,29 +61,57 @@ int AcoFlat::assignJob(int p, int j)
 {
     int jobId = jobIds[j];
     procTotalTime[p] += jobTime[jobId];
-    jobIds[j] = jobIds[--nJobsRemaining];
-    jobIds[nJobsRemaining] = jobId;
+    jobIds[j] = jobIds[jobs->getRemFruits()];
+    jobIds[jobs->getRemFruits()] = jobId;
     return jobId;
     // cout << "id: " << j << " Value: " << job << " TO: " << p << endl;
+}
+
+int AcoFlat::assignJobId(int p, int jobId)
+{
+    procTotalTime[p] += jobTime[jobId];
+    return jobId;
+}
+
+void AcoFlat::verify()
+{
+    int sum = 0;
+    for (int i = 0; i < nJobs; i++)
+    {
+        sum += jobTime[jobQueue[i]];
+    };
+    if (sum != totalTime)
+    {
+        cout << "Invalid task sum: " << sum << " differs " << totalTime << endl;
+        for (int i = 0; i < nJobs; i++)
+        {
+            cout << jobQueue[i] << " ";
+        };
+        throw exception();
+    }
 }
 
 int AcoFlat::standardIteration(int n)
 {
     for (int i = 0; i < nProcs; i++)
         procTotalTime[i] = 0;
-    nJobsRemaining = nJobs;
-    int currentJob = n;
-    for (int i = 0; i < nJobs; i++)
+    jobs->reset();
+    int currentJob = jobs->pick(n);
+    jobQueue[0] = assignJobId(0, currentJob);
+    for (int i = 1; i < nJobs; i++)
     {
         int procId = findMin();
-        jobQueue[i] = assignJob(procId, currentJob);
-        currentJob = pickAvailableNextJob(currentJob);
+        currentJob = jobs->pick();
+        jobQueue[i] = assignJobId(procId, currentJob);
     }
 
     int solution = procTotalTime[findMax()];
-    if (solution < bestRecord)
+    if (solution < bestRecord) {
         bestRecord = solution;
-    cout << "Solution: " << solution << endl;
+        cout << "New crazy record: " << solution << endl;
+        //verify();
+    }
+    verify();
     return solution;
 }
 
@@ -101,7 +132,7 @@ int AcoFlat::findNextJob(int j)
 {
     int bestNode = -294967295;
     int bestId = 0;
-    for (int i = 0; i < nJobsRemaining; i++)
+    for (int i = 0; i < jobs->getRemFruits(); i++)
     {
         int idx = mat2Get(j, i, nJobs);
         if (edgeFeromon[idx] > bestNode)
@@ -118,7 +149,7 @@ int AcoFlat::dryRun(int start)
 {
     for (int i = 0; i < nProcs; i++)
         procTotalTime[i] = 0;
-    nJobsRemaining = nJobs;
+    jobs->reset();
     int currentJob = start;
     for (int i = 0; i < nJobs; i++)
     {
@@ -134,6 +165,32 @@ int AcoFlat::dryRun(int start)
     return solution;
 }
 
+int AcoFlat::wetRun(int start) {
+    for (int i = 0; i < nProcs; i++)
+        procTotalTime[i] = 0;
+    jobs->reset();
+    int currentJob = start;
+    for (int i = 0; i < nJobs; i++)
+    {
+        int procId = findMin();
+        jobQueue[i] = assignJob(procId, currentJob);
+        currentJob = findNextJob(currentJob);
+    }
+    srand(time(NULL));
+
+    int solution = procTotalTime[findMax()];
+    if (solution < bestAcoRecord)
+    {
+        bestAcoRecord = solution;
+        cout << "New ACO record: " << solution << endl;
+        verify();
+    }
+    for (int j = 0; j < nJobs - 1; j++)
+        edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += totalTime - solution;
+        //nEdgesRemaining--;
+    return solution;
+}
+
 AcoFlat::AcoFlat(char* file)
 {
     ifstream source(file);
@@ -146,6 +203,7 @@ AcoFlat::AcoFlat(char* file)
 
     jobTime = new int[nJobs];
     jobIds = new int[nJobs];
+    jobs = new FruitPicker(nJobs);
     totalTime = 0;
     for (int i = 0; i < nJobs; i++)
     {
@@ -161,18 +219,24 @@ AcoFlat::AcoFlat(char* file)
     edgesRemaining = new int[nEdges];
     int e = 0;
     for (int i = 0; i < nJobs; i++)
+    {
         for (int j = 0; j < nJobs; j++)
             edgesRemaining[e++] = j;
+    }
 
     edgeFeromon = new int[nEdges];
     for (int i = 0; i < nEdges; i++)
         edgeFeromon[i] = 0;
 
     nEdgesRemaining = nJobs;
-    acoIteration();
-    acoIteration();
-    for (int i = 0; i < nJobs; i++)
-        dryRun(i);
+    for (int j = 0; j < 10000; j++)
+    {
+        acoIteration();
+        for (int i = 0; i < nJobs; i++)
+        {
+            wetRun(i);
+        }
+    }
     cout << "Best record: " << bestRecord << endl;
     cout << "Best ACO record: " << bestAcoRecord << endl;
     cout << "What is better?" << endl;

@@ -18,6 +18,7 @@
 #include "AntSolver.h"
 #include "zach2.h"
 #include "AcoFlat.h"
+#include "FruitPicker.h"
 
 using namespace std;
 
@@ -113,6 +114,10 @@ int main(int argc, char* argv[])
     else if (cmd == "test2" || cmd == "t2")
     {
         NestLevel::test();
+    }
+    else if (cmd == "test4" || cmd == "t4")
+    {
+        FruitPicker::test();
     }
     else if (cmd == "test3" || cmd == "t3")
     {

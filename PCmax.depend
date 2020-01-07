@@ -375,3 +375,125 @@
 
 1577481728 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
 
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
+
+1578408124 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+	"zach2.h"
+	"AcoFlat.h"
+	"FruitPicker.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\sort.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\processor.h
+	<string>
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\tgraph.h
+	"AntNode.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\antnode.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\nestlevel.h
+	"AntNode.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\ant.h
+	"NestLevel.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\zach2.h
+
+1578409147 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
+	"FruitPicker.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\antnode.cpp
+	"AntNode.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\generator.h
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1578409486 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+	"AcoFlat.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+
+1578408241 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
+
+1578409716 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
+	<iostream>
+	<stdlib.h>
+	"FruitPicker.h"
+
