@@ -422,8 +422,9 @@
 
 1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\zach2.h
 
-1578409147 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
+1578466028 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
 	"FruitPicker.h"
+	"FruitBins.h"
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\ant.cpp
 	"Ant.h"
@@ -478,23 +479,24 @@
 	"TGraph.h"
 	<iostream>
 
-1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\zach2.cpp
+1578463217 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\zach2.cpp
 	<fstream>
 	<iostream>
 	"sort.h"
 	"zach2.h"
 
-1578419559 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578468682 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
 	<fstream>
 	<iostream>
 	"FruitPicker.h"
+	"FruitBins.h"
 
 1578419192 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
 
-1578419331 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
+1578419870 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
 	<iostream>
 	<stdlib.h>
 	"FruitPicker.h"
@@ -505,4 +507,10 @@
 	<iostream>
 	<stdlib.h>
 	"FruitPicker.h"
+
+1578467160 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
+
+1578467761 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
+	"FruitBins.h"
+	<iostream>
 

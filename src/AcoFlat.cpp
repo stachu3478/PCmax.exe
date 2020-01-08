@@ -6,44 +6,13 @@
 #include <iostream>
 
 #include "FruitPicker.h"
+#include "FruitBins.h"
 
 using namespace std;
 
 int mat2Get(int x, int y, int n)
 {
     return x * n + y;
-}
-
-int AcoFlat::findMin()
-{
-    int minWeight = 294967295;
-    int minIndex = 0;
-    for (int i = 0; i < nProcs; i++)
-    {
-        int weight = procTotalTime[i];
-        if (weight < minWeight)
-        {
-            minWeight = weight;
-            minIndex = i;
-        }
-    }
-    return minIndex;
-}
-
-int AcoFlat::findMax()
-{
-    int maxWeight = 0;
-    int maxIndex = 0;
-    for (int i = 0; i < nProcs; i++)
-    {
-        int weight = procTotalTime[i];
-        if (weight > maxWeight)
-        {
-            maxWeight = weight;
-            maxIndex = i;
-        }
-    }
-    return maxIndex;
 }
 
 // Takes edge remaining
@@ -57,7 +26,7 @@ int AcoFlat::pickAvailableNextJob(int j)
     return job;
 }
 
-int AcoFlat::assignJob(int p, int j)
+/*int AcoFlat::assignJob(int p, int j)
 {
     int jobId = jobIds[j];
     procTotalTime[p] += jobTime[jobId];
@@ -65,17 +34,12 @@ int AcoFlat::assignJob(int p, int j)
     jobIds[jobs->getRemFruits()] = jobId;
     return jobId;
     // cout << "id: " << j << " Value: " << job << " TO: " << p << endl;
-}
-
-int AcoFlat::assignJobId(int p, int jobId)
-{
-    procTotalTime[p] += jobTime[jobId];
-    return jobId;
-}
+}*/
 
 void AcoFlat::verify()
 {
     int sum = 0;
+    int sumProcs = procs->getTotal();
     for (int i = 0; i < nJobs; i++)
     {
         sum += jobTime[jobQueue[i]];
@@ -90,24 +54,57 @@ void AcoFlat::verify()
         cout << endl;
         jobs->dump();
         throw exception();
+    } else if (sumProcs != totalTime)
+    {
+        cout << "Invalid procs sum: " << sumProcs << " differs " << totalTime << endl;
+        for (int i = 0; i < nJobs; i++)
+        {
+        //    cout << jobQueue[i] << " ";
+        };
+        cout << endl;
+        //jobs->dump();
+        throw exception();
+    } else if (procs->getMax() == 151)
+    {
+        int* procJobs = new int[500];
+        int* procN = new int[50];
+        for (int i = 0; i < 50; i++)
+            procN[i] = 0;
+        jobs->reset();
+        procs->reset();
+        for (int i = 0; i < jobs->getRemFruits(); i++)
+        {
+            int proc = procs->addToLeast(jobTime[jobQueue[i]]);
+            int poz = procN[proc]++;
+            int idx = mat2Get(proc, poz, 10);
+            procJobs[idx] = jobTime[jobQueue[i]];
+
+        }
+        for (int i = 0; i < 50; i++)
+        {
+            cout << "--" << endl;
+            for (int j = 0; j < procN[i]; j++)
+            {
+                cout << procJobs[mat2Get(i, j, 10)] << " ";
+            }
+        }
+        exit(0);
     }
 }
 
 int AcoFlat::standardIteration(int n)
 {
-    for (int i = 0; i < nProcs; i++)
-        procTotalTime[i] = 0;
+    procs->reset();
     jobs->reset();
-    int currentJob = jobs->pick(n);
-    jobQueue[0] = assignJobId(0, currentJob);
+    jobQueue[0] = jobs->pick(n);
+    procs->addToLeast(jobTime[jobQueue[0]]);
     for (int i = 1; i < nJobs; i++)
     {
-        int procId = findMin();
-        currentJob = jobs->pick();
-        jobQueue[i] = assignJobId(procId, currentJob);
+        jobQueue[i] = findNextJob(jobQueue[i - 1]);
+        procs->addToLeast(jobTime[jobQueue[i]]);
     }
 
-    int solution = procTotalTime[findMax()];
+    int solution = procs->getMax();
     if (solution < bestRecord) {
         bestRecord = solution;
         cout << "New crazy record: " << solution << endl;
@@ -147,20 +144,19 @@ int AcoFlat::findNextJob(int j)
     return job;
 }
 
+// TODO think about remove
 int AcoFlat::dryRun(int start)
 {
-    for (int i = 0; i < nProcs; i++)
-        procTotalTime[i] = 0;
+    procs->reset();
     jobs->reset();
     int currentJob = start;
     for (int i = 0; i < nJobs; i++)
     {
-        int procId = findMin();
-        jobQueue[i] = assignJobId(procId, currentJob);
-        currentJob = findNextJob(currentJob);
+        jobQueue[i] = findNextJob(currentJob);
+        procs->addToLeast(jobTime[jobQueue[i]]);
     }
 
-    int solution = procTotalTime[findMax()];
+    int solution = procs->getMax();
     if (solution < bestAcoRecord)
         bestAcoRecord = solution;
     cout << "ACO Solution: " << solution << endl;
@@ -168,19 +164,17 @@ int AcoFlat::dryRun(int start)
 }
 
 int AcoFlat::wetRun(int start) {
-    for (int i = 0; i < nProcs; i++)
-        procTotalTime[i] = 0;
+    procs->reset();
     jobs->reset();
-    int currentJob = jobs->pick(start);
-    jobQueue[0] = assignJobId(0, currentJob);
+    jobQueue[0] = jobs->pick(start);
+    procs->addToLeast(jobTime[jobQueue[0]]);
     for (int i = 1; i < nJobs; i++)
     {
-        int procId = findMin();
-        currentJob = findNextJob(currentJob);
-        jobQueue[i] = assignJobId(procId, currentJob);
+        jobQueue[i] = findNextJob(jobQueue[i - 1]);
+        procs->addToLeast(jobTime[jobQueue[i]]);
     }
 
-    int solution = procTotalTime[findMax()];
+    int solution = procs->getMax();
     if (solution < bestAcoRecord)
     {
         bestAcoRecord = solution;
@@ -197,7 +191,9 @@ AcoFlat::AcoFlat(char* file)
 {
     ifstream source(file);
     cout << "File opened\n";
+    int nProcs;
     source >> nProcs;
+    procs = new FruitBins(nProcs);
     source >> nJobs;
     cout << "Processors defined: " << nProcs << " Jobs: " << nJobs << endl;
     bestRecord = 294967295;
@@ -215,7 +211,6 @@ AcoFlat::AcoFlat(char* file)
     }
     worstGreedy = (totalTime / nProcs + 1) * 2;
 
-    procTotalTime = new int[nProcs];
     jobQueue = new int[nJobs];
 
     nEdges = nJobs * nJobs;
@@ -251,5 +246,5 @@ AcoFlat::AcoFlat(char* file)
 
 AcoFlat::~AcoFlat()
 {
-    //dtor
+    delete jobs;
 }

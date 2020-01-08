@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve m50n1000.txt acoflat" />
+				<Option parameters="solve m30.txt acoflat C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt acoflat" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -43,6 +43,7 @@
 		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
+		<Unit filename="include/FruitBins.h" />
 		<Unit filename="include/FruitPicker.h" />
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/NestLevel.h" />
@@ -55,6 +56,7 @@
 		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />
+		<Unit filename="src/FruitBins.cpp" />
 		<Unit filename="src/FruitPicker.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/NestLevel.cpp" />

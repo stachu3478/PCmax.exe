@@ -2,6 +2,7 @@
 #define ACOFLAT_H
 
 #include "FruitPicker.h"
+#include "FruitBins.h"
 
 class AcoFlat
 {
@@ -14,12 +15,8 @@ class AcoFlat
         void acoIteration();
         int standardIteration(int n);
 
-        int findMin();
-        int findMax();
-        int pickJob(int j);
-        int pickRandomJob();
         int pickAvailableNextJob(int j);
-        int assignJob(int p, int j);
+        // int assignJob(int p, int j);
         int assignJobId(int p, int id);
         void verify();
         int dryRun(int s);
@@ -41,8 +38,7 @@ class AcoFlat
         int* jobIds;
         FruitPicker* jobs;
 
-        int nProcs;
-        int* procTotalTime;
+        FruitBins* procs;
         int* jobQueue;
         int bestRecord;
         int bestAcoRecord;
