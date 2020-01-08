@@ -15,27 +15,6 @@ int mat2Get(int x, int y, int n)
     return x * n + y;
 }
 
-// Takes edge remaining
-int AcoFlat::pickAvailableNextJob(int j)
-{
-    int edgeIndex = mat2Get(j, rand() % nEdgesRemaining, nJobs);
-    int job = edgesRemaining[edgeIndex];
-    int hideIndex = mat2Get(j, nEdgesRemaining - 1, nJobs);
-    edgesRemaining[edgeIndex] = edgesRemaining[hideIndex];
-    edgesRemaining[hideIndex] = job;
-    return job;
-}
-
-/*int AcoFlat::assignJob(int p, int j)
-{
-    int jobId = jobIds[j];
-    procTotalTime[p] += jobTime[jobId];
-    jobIds[j] = jobIds[jobs->getRemFruits()];
-    jobIds[jobs->getRemFruits()] = jobId;
-    return jobId;
-    // cout << "id: " << j << " Value: " << job << " TO: " << p << endl;
-}*/
-
 void AcoFlat::verify()
 {
     int sum = 0;
@@ -100,89 +79,51 @@ int AcoFlat::standardIteration(int n)
     procs->addToLeast(jobTime[jobQueue[0]]);
     for (int i = 1; i < nJobs; i++)
     {
-        jobQueue[i] = findNextJob(jobQueue[i - 1]);
+        jobQueue[i] = jobs->pick();
         procs->addToLeast(jobTime[jobQueue[i]]);
     }
 
     int solution = procs->getMax();
-    if (solution < bestRecord) {
-        bestRecord = solution;
-        cout << "New crazy record: " << solution << endl;
+    if (recorder->process(0, solution))
         verify();
-    }
     return solution;
 }
 
 void AcoFlat::acoIteration()
 {
-    nEdgesRemaining = nJobs;
+    // nEdgesRemaining = nJobs;
     for (int i = 0; i < nJobs; i++)
     {
         int solution = standardIteration(i);
-        // TODO feromon assignation
         for (int j = 0; j < nJobs - 1; j++)
-            edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += totalTime - solution;
-        nEdgesRemaining--;
+            feromon->grow(jobQueue[j], jobQueue[j + 1], worstGreedy - solution);
+            // edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += totalTime - solution;
+        // nEdgesRemaining--;
     }
 }
 
-int AcoFlat::findNextJob(int j)
-{
-    int bestNode = -294967295;
-    int bestId = 0;
-    for (int i = 0; i < jobs->getRemFruits(); i++)
-    {
-        int idx = mat2Get(j, jobs->show(i), nJobs);
-        if (edgeFeromon[idx] > bestNode)
-        {
-            bestNode = edgeFeromon[idx];
-            bestId = i;
-        }
-    }
-    int job = jobs->pickArr(bestId);
-    // cout << bestId << " " << job << endl;
-    return job;
-}
-
-// TODO think about remove
 int AcoFlat::dryRun(int start)
 {
-    procs->reset();
-    jobs->reset();
-    int currentJob = start;
-    for (int i = 0; i < nJobs; i++)
-    {
-        jobQueue[i] = findNextJob(currentJob);
-        procs->addToLeast(jobTime[jobQueue[i]]);
-    }
-
-    int solution = procs->getMax();
-    if (solution < bestAcoRecord)
-        bestAcoRecord = solution;
-    cout << "ACO Solution: " << solution << endl;
-    return solution;
-}
-
-int AcoFlat::wetRun(int start) {
     procs->reset();
     jobs->reset();
     jobQueue[0] = jobs->pick(start);
     procs->addToLeast(jobTime[jobQueue[0]]);
     for (int i = 1; i < nJobs; i++)
     {
-        jobQueue[i] = findNextJob(jobQueue[i - 1]);
+        int index = feromon->getBiggest(jobQueue[i - 1], jobs->showList(), jobs->getRemFruits());//jobQueue[i - 1]);
+        jobQueue[i] = jobs->pickArr(index);
         procs->addToLeast(jobTime[jobQueue[i]]);
     }
-
     int solution = procs->getMax();
-    if (solution < bestAcoRecord)
-    {
-        bestAcoRecord = solution;
-        cout << "New ACO record: " << solution << endl;
+    if (recorder->process(1, solution))
         verify();
-    }
+    return solution;
+}
+
+int AcoFlat::wetRun(int start) {
+    int solution = dryRun(start);
     for (int j = 0; j < nJobs - 1; j++)
-        edgeFeromon[mat2Get(jobQueue[j], jobQueue[j + 1], nJobs)] += worstGreedy - solution;
+        feromon->grow(jobQueue[j], jobQueue[j + 1], worstGreedy - solution);
         //nEdgesRemaining--;
     return solution;
 }
@@ -196,52 +137,33 @@ AcoFlat::AcoFlat(char* file)
     procs = new FruitBins(nProcs);
     source >> nJobs;
     cout << "Processors defined: " << nProcs << " Jobs: " << nJobs << endl;
-    bestRecord = 294967295;
-    bestAcoRecord = bestRecord;
+    recorder = new Guiness(2, 294967295);
+    recorder->setName(0, "CRAZY");
+    recorder->setName(1, "ACO");
 
     jobTime = new int[nJobs];
-    jobIds = new int[nJobs];
     jobs = new FruitPicker(nJobs);
     totalTime = 0;
     for (int i = 0; i < nJobs; i++)
     {
         source >> jobTime[i];
         totalTime += jobTime[i];
-        jobIds[i] = i;
     }
     worstGreedy = (totalTime / nProcs + 1) * 2;
 
     jobQueue = new int[nJobs];
+    // skrót programowy, powinno byc o 1 mniej krawedzi
+    feromon = new FruitQualifier(nJobs, nJobs);
 
-    nEdges = nJobs * nJobs;
-    edgesRemaining = new int[nEdges];
-    int e = 0;
-    for (int i = 0; i < nJobs; i++)
+    for (int j = 0; j < 10; j++)
     {
-        for (int j = 0; j < nJobs; j++)
-            edgesRemaining[e++] = j;
-    }
-
-    edgeFeromon = new int[nEdges];
-    for (int i = 0; i < nEdges; i++)
-        edgeFeromon[i] = 0;
-
-    nEdgesRemaining = nJobs;
-    for (int j = 0; j < 10000; j++)
-    {
-        acoIteration();
         for (int i = 0; i < nJobs; i++)
         {
             wetRun(i);
         }
+        acoIteration();
     }
-    cout << "Best record: " << bestRecord << endl;
-    cout << "Best ACO record: " << bestAcoRecord << endl;
-    cout << "What is better?" << endl;
-    if (bestRecord < bestAcoRecord)
-        cout << "Randomizing!!!" << endl;
-    else
-        cout << "Feromon!!!" << endl;
+    recorder->report();
 }
 
 AcoFlat::~AcoFlat()

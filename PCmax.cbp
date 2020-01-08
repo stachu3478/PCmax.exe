@@ -11,10 +11,11 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve m30.txt acoflat C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt acoflat" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt acoflat" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="include/helpers" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="include/helpers" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,11 +46,14 @@
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
 		<Unit filename="include/FruitBins.h" />
+		<Unit filename="include/FruitGroup.h" />
 		<Unit filename="include/FruitPicker.h" />
+		<Unit filename="include/FruitQualifier.h" />
 		<Unit filename="include/Generator.h" />
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
+		<Unit filename="include/helpers/Guiness.h" />
 		<Unit filename="include/sort.h" />
 		<Unit filename="include/zach2.h" />
 		<Unit filename="main.cpp" />
@@ -57,11 +62,14 @@
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />
 		<Unit filename="src/FruitBins.cpp" />
+		<Unit filename="src/FruitGroup.cpp" />
 		<Unit filename="src/FruitPicker.cpp" />
+		<Unit filename="src/FruitQualifier.cpp" />
 		<Unit filename="src/Generator.cpp" />
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />
 		<Unit filename="src/TGraph.cpp" />
+		<Unit filename="src/helpers/Guiness.cpp" />
 		<Unit filename="src/sort.cpp" />
 		<Unit filename="src/zach2.cpp" />
 		<Extensions>

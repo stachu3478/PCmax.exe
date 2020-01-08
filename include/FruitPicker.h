@@ -16,6 +16,7 @@ class FruitPicker
         int pick(int id);
         int pickArr(int id);
         int show(int arrId) { return fruits[arrId]; };
+        int* showList() { return fruits; }; // should be readonly
         int getRemFruits() { return remFruits; };
         void reset() { remFruits = nFruits; };
         void dump();

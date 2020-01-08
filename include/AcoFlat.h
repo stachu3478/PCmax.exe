@@ -3,6 +3,8 @@
 
 #include "FruitPicker.h"
 #include "FruitBins.h"
+#include "FruitQualifier.h"
+#include "Guiness.h"
 
 class AcoFlat
 {
@@ -16,34 +18,27 @@ class AcoFlat
         int standardIteration(int n);
 
         int pickAvailableNextJob(int j);
-        // int assignJob(int p, int j);
         int assignJobId(int p, int id);
         void verify();
         int dryRun(int s);
         int wetRun(int s);
-        int findNextJob(int j);
 
     protected:
 
     private:
         int vape;
         int totalTime;
-        int* edgeFeromon;
-        int nEdges;
-        int* edgesRemaining;
-        int nEdgesRemaining;
+        FruitQualifier* feromon;
 
         int nJobs;
         int* jobTime;
-        int* jobIds;
         FruitPicker* jobs;
 
         FruitBins* procs;
         int* jobQueue;
-        int bestRecord;
-        int bestAcoRecord;
 
         int worstGreedy;
+        Guiness* recorder;
 };
 
 #endif // ACOFLAT_H

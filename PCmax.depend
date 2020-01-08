@@ -422,9 +422,11 @@
 
 1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\zach2.h
 
-1578466028 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
+1578493804 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
 	"FruitPicker.h"
 	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\ant.cpp
 	"Ant.h"
@@ -485,7 +487,7 @@
 	"sort.h"
 	"zach2.h"
 
-1578468682 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578494043 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
@@ -494,7 +496,7 @@
 	"FruitPicker.h"
 	"FruitBins.h"
 
-1578419192 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
+1578489857 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
 
 1578419870 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
 	<iostream>
@@ -512,5 +514,24 @@
 
 1578467761 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
 	"FruitBins.h"
+	<iostream>
+
+1578490327 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitqualifier.h
+	"FruitGroup.h"
+
+1578490104 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitgroup.h
+
+1578490080 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitgroup.cpp
+	"FruitGroup.h"
+
+1578490338 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitqualifier.cpp
+	"FruitQualifier.h"
+	"FruitGroup.h"
+
+1578493786 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\helpers\guiness.h
+	<string>
+
+1578493682 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\helpers\guiness.cpp
+	"Guiness.h"
 	<iostream>
 
