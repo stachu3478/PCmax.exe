@@ -16,8 +16,7 @@ void sortItems(unsigned int* tItems, int length)
             tItems[j] = tItems[i];
             tItems[i] = tItem;
         }
-        i++;
-    } while (i < j);
+    } while (++i < j);
     if (i > 1)
     {
         sortItems(tItems, i);

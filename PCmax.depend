@@ -422,11 +422,12 @@
 
 1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\zach2.h
 
-1578493804 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
+1578552089 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
 	"FruitPicker.h"
 	"FruitBins.h"
 	"FruitQualifier.h"
 	"Guiness.h"
+	"Greedy.h"
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\ant.cpp
 	"Ant.h"
@@ -471,7 +472,7 @@
 	"sort.h"
 	"Processor.h"
 
-1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
+1578547390 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
 	<iostream>
 	<sort.h>
 	<ctime>
@@ -487,7 +488,7 @@
 	"sort.h"
 	"zach2.h"
 
-1578494043 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578551672 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
@@ -498,7 +499,7 @@
 
 1578489857 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
 
-1578419870 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
+1578551776 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
 	<iostream>
 	<stdlib.h>
 	"FruitPicker.h"
@@ -516,7 +517,7 @@
 	"FruitBins.h"
 	<iostream>
 
-1578490327 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitqualifier.h
+1578551445 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitqualifier.h
 	"FruitGroup.h"
 
 1578490104 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitgroup.h
@@ -531,7 +532,17 @@
 1578493786 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\helpers\guiness.h
 	<string>
 
-1578493682 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\helpers\guiness.cpp
+1578494157 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\helpers\guiness.cpp
 	"Guiness.h"
 	<iostream>
+
+1578550300 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
+	"Greedy.h"
+	<iostream>
+	"FruitBins.h"
+
+1578549746 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Guiness.h"
 

@@ -50,6 +50,7 @@
 		<Unit filename="include/FruitPicker.h" />
 		<Unit filename="include/FruitQualifier.h" />
 		<Unit filename="include/Generator.h" />
+		<Unit filename="include/Greedy.h" />
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="src/FruitPicker.cpp" />
 		<Unit filename="src/FruitQualifier.cpp" />
 		<Unit filename="src/Generator.cpp" />
+		<Unit filename="src/Greedy.cpp" />
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />
 		<Unit filename="src/TGraph.cpp" />

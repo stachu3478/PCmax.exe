@@ -5,6 +5,7 @@
 #include "FruitBins.h"
 #include "FruitQualifier.h"
 #include "Guiness.h"
+#include "Greedy.h"
 
 class AcoFlat
 {
@@ -30,12 +31,7 @@ class AcoFlat
         int totalTime;
         FruitQualifier* feromon;
 
-        int nJobs;
-        int* jobTime;
-        FruitPicker* jobs;
-
-        FruitBins* procs;
-        int* jobQueue;
+        Greedy* greedy;
 
         int worstGreedy;
         Guiness* recorder;
