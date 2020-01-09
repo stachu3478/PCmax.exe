@@ -34,6 +34,7 @@ class Greedy
         int nJobs;
         int* jobTime;
         int* jobQueue;
+        int* bestJobQueue;
         int jobPtr;
         FruitPicker* jobs;
         FruitBins* procs;

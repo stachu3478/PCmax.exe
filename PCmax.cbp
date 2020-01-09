@@ -11,11 +11,12 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt acoflat" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50.txt acoflat" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="include/helpers" />
+					<Add directory="include/utils" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,6 +29,7 @@
 					<Add option="-O2" />
 					<Add directory="include" />
 					<Add directory="include/helpers" />
+					<Add directory="include/utils" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -56,6 +58,9 @@
 		<Unit filename="include/TGraph.h" />
 		<Unit filename="include/helpers/Guiness.h" />
 		<Unit filename="include/sort.h" />
+		<Unit filename="include/utils/FruitCase.h" />
+		<Unit filename="include/utils/FruitMagazine.h" />
+		<Unit filename="include/utils/MiniOpt.h" />
 		<Unit filename="include/zach2.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AcoFlat.cpp" />
@@ -73,6 +78,9 @@
 		<Unit filename="src/TGraph.cpp" />
 		<Unit filename="src/helpers/Guiness.cpp" />
 		<Unit filename="src/sort.cpp" />
+		<Unit filename="src/utils/FruitCase.cpp" />
+		<Unit filename="src/utils/FruitMagazine.cpp" />
+		<Unit filename="src/utils/MiniOpt.cpp" />
 		<Unit filename="src/zach2.cpp" />
 		<Extensions>
 			<code_completion />

@@ -488,7 +488,7 @@
 	"sort.h"
 	"zach2.h"
 
-1578551672 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578552082 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
@@ -536,13 +536,27 @@
 	"Guiness.h"
 	<iostream>
 
-1578550300 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
+1578586690 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
 	"Greedy.h"
 	<iostream>
 	"FruitBins.h"
+	"FruitMagazine.h"
 
-1578549746 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
+1578586502 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
 	"FruitPicker.h"
 	"FruitBins.h"
 	"Guiness.h"
+
+1578585629 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitcase.cpp
+	"FruitCase.h"
+	<iostream>
+
+1578584983 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitcase.h
+
+1578585640 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitmagazine.cpp
+	"FruitMagazine.h"
+	"FruitCase.h"
+
+1578584965 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitmagazine.h
+	"FruitCase.h"
 

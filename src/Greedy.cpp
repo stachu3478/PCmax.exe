@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "FruitBins.h"
+#include "FruitMagazine.h"
 
 using namespace std;
 
@@ -12,16 +13,12 @@ Greedy::Greedy(int p, int* j, int n)
     procs = new FruitBins(p);
     jobs = new FruitPicker(n);
     jobQueue = new int[n];
+    bestJobQueue = new int[n];
     totalTime = 0;
     for (int i = 0; i < nJobs; i++)
     {
         totalTime += jobTime[i];
     }
-}
-
-int mat2Get(int x, int y, int n)
-{
-    return x * n + y;
 }
 
 void Greedy::verify()
@@ -52,32 +49,21 @@ void Greedy::verify()
         cout << endl;
         //jobs->dump();
         throw exception();
-    } else if (procs->getMax() == 151)
+    } else if (procs->getMax() == 152)
     {
-        int* procJobs = new int[500];
-        int* procN = new int[50];
-        for (int i = 0; i < 50; i++)
-            procN[i] = 0;
+        FruitMagazine* procJobs = new FruitMagazine(50, 10);
         jobs->reset();
         procs->reset();
         for (int i = 0; i < jobs->getRemFruits(); i++)
         {
             int proc = procs->addToLeast(jobTime[jobQueue[i]]);
-            int poz = procN[proc]++;
-            int idx = mat2Get(proc, poz, 10);
-            procJobs[idx] = jobTime[jobQueue[i]];
-
+            procJobs->add(proc, jobTime[jobQueue[i]]);
         }
-        for (int i = 0; i < 50; i++)
-        {
-            cout << "--" << endl;
-            for (int j = 0; j < procN[i]; j++)
-            {
-                cout << procJobs[mat2Get(i, j, 10)] << " ";
-            }
-        }
+        procJobs->printContents();
         exit(0);
-    }
+    } // else cout << procs->getMax() << endl;
+    for (int i = 0; i < jobs->getRemFruits(); i++)
+        bestJobQueue[i] = jobQueue[i];
 }
 
 int Greedy::solve()
@@ -89,21 +75,21 @@ int Greedy::solve()
 
 int Greedy::step()
 {
-    procs->addToLeast(jobTime[
+    return procs->addToLeast(jobTime[
                         jobQueue[jobPtr++] = jobs->pick()
                       ]);
 }
 
 int Greedy::step(int j)
 {
-    procs->addToLeast(jobTime[
+    return procs->addToLeast(jobTime[
                         jobQueue[jobPtr++] = jobs->pick(j)
                       ]);
 }
 
 int Greedy::stepId(int jId)
 {
-    procs->addToLeast(jobTime[
+    return procs->addToLeast(jobTime[
                         jobQueue[jobPtr++] = jobs->pickArr(jId)
                       ]);
 }
