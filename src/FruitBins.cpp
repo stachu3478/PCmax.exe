@@ -1,46 +1,28 @@
 #include "FruitBins.h"
 
 #include <iostream>
+#include "finder.h"
 
 FruitBins::FruitBins(int n)
 {
     nBins = n;
     bins = new int[n];
     binPtr = 0;
+    fdr = new finder(bins, n);
 }
 
 int FruitBins::getLeastWild(bool index)
 {
-    int minWeight = 294967295;
-    int minBin = 0;
-    for (int i = 0; i < nBins; i++)
-    {
-        int weight = bins[i];
-        if (weight < minWeight)
-        {
-            minWeight = weight;
-            minBin = i;
-        }
-    }
+    int idx = fdr->minx();
     if (index)
-        return minBin;
-    return minWeight;
+        return idx;
+    return bins[idx];
 }
 
 int FruitBins::getMax()
 {
-    int maxWeight = 0;
-    int maxBin = 0;
-    for (int i = 0; i < nBins; i++)
-    {
-        int weight = bins[i];
-        if (weight > maxWeight)
-        {
-            maxWeight = weight;
-            maxBin = i;
-        }
-    }
-    return maxWeight;
+    int index = fdr->maxx();
+    return bins[index];
 }
 
 int FruitBins::addToLeast(int fruit)

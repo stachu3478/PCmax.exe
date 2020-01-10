@@ -1,6 +1,7 @@
 #ifndef FRUITGROUP_H
 #define FRUITGROUP_H
 
+#include "finder.h"
 
 class FruitGroup
 {

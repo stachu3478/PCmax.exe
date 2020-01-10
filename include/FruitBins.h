@@ -1,6 +1,7 @@
 #ifndef FRUITBINS_H
 #define FRUITBINS_H
 
+#include "finder.h"
 
 class FruitBins
 {
@@ -22,6 +23,7 @@ class FruitBins
         int* bins;
 
         int binPtr;
+        finder* fdr;
 
         int getLeastWild(bool index);
 };

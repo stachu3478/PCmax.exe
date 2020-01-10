@@ -3,45 +3,40 @@
 #include <iostream>
 
 #include "sort.h"
+#include "FruitAccountant.h"
 
 using namespace std;
 
 void MiniOpt::exchange(int i, int j)
 {
-    int tmp = arr1[i];
-    arr1[i] = arr2[j];
-    arr2[j] = tmp;
-    sum1 += arr1[i] - arr2[j];
-    sum2 += arr2[j] - arr1[i];
-    diff = sum1 - sum2;
+    int tmp = juice1->get(i);
+    juice1->repl(i, juice2->get(j));
+    juice2->repl(j, tmp);
+    diff = juice1->getSum() - juice2->getSum();
     change = true;
     cout << "diff : " << diff << endl;
 }
 
-MiniOpt::MiniOpt(int* a1, int* a2, int size1, int size2)
+void MiniOpt::init()
 {
-    arr1 = a1;
-    arr2 = a2;
-    sum1 = 0, sum2 = 0;
-    for (int i = 0; i < size1; i++)
-        sum1 += arr1[i];
-    for (int i = 0; i < size2; i++)
-        sum2 += arr2[i];
-    diff = sum1 - sum2;
+    diff = juice1->getSum() - juice2->getSum();
     cout << "diff: " << diff << endl;
 
     do {
-        sortInt(a1, size1);
-        sortInt(a2, size2);
+        juice1->sortFruits();
+        juice2->sortFruits();
         change = false;
         int ptr1 = 0, ptr2 = 0;
+        int size1 = juice1->getLength(), size2 = juice2->getLength();
         while (ptr1 < size1 && ptr2 < size2)
         {
+            int fruit1 = juice1->get(ptr1);
+            int fruit2 = juice2->get(ptr2);
             if (diff < 0)
             {
-                if (arr1[ptr1] < arr2[ptr2])
+                if (fruit1 < fruit2)
                 {
-                    if (arr1[ptr1] - arr2[ptr2] >= diff)
+                    if (fruit1 - fruit2 >= diff)
                         exchange(ptr1, ptr2);
                     ptr2++;
                 }
@@ -49,9 +44,9 @@ MiniOpt::MiniOpt(int* a1, int* a2, int size1, int size2)
                     ptr1++;
             } else if (diff > 0)
             {
-                if (arr1[ptr1] > arr2[ptr2])
+                if (fruit1 > fruit2)
                 {
-                    if (arr1[ptr1] - arr2[ptr2] <= diff)
+                    if (fruit1 - fruit2 <= diff)
                         exchange(ptr1, ptr2);
                     ptr1++;
                 }
@@ -65,6 +60,20 @@ MiniOpt::MiniOpt(int* a1, int* a2, int size1, int size2)
         }
     } while (change);
     cout << "Not optimal" << endl;
+}
+
+MiniOpt::MiniOpt(FruitAccountant* a, FruitAccountant* b)
+{
+    juice1 = a;
+    juice2 = b;
+    init();
+}
+
+MiniOpt::MiniOpt(int* a1, int* a2, int size1, int size2)
+{
+    juice1 = new FruitAccountant(a1, size1);
+    juice2 = new FruitAccountant(a2, size2);
+    init();
 }
 
 void MiniOpt::test()

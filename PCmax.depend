@@ -489,7 +489,7 @@
 	"sort.h"
 	"zach2.h"
 
-1578650770 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578650908 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
@@ -512,18 +512,21 @@
 	<stdlib.h>
 	"FruitPicker.h"
 
-1578650790 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
+1578664494 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
+	"finder.h"
 
-1578650523 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
+1578668677 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
 	"FruitBins.h"
 	<iostream>
+	"finder.h"
 
 1578551445 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitqualifier.h
 	"FruitGroup.h"
 
-1578490104 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitgroup.h
+1578663971 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitgroup.h
+	"finder.h"
 
-1578490080 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitgroup.cpp
+1578663963 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitgroup.cpp
 	"FruitGroup.h"
 
 1578490338 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitqualifier.cpp
@@ -561,10 +564,31 @@
 1578584965 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitmagazine.h
 	"FruitCase.h"
 
-1578649689 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
+1578669155 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
 	"MiniOpt.h"
 	<iostream>
 	"sort.h"
 
-1578647808 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\miniopt.h
+1578668878 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\miniopt.h
+	"FruitAccountant.h"
+
+1578664003 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\libs\finder.h
+
+1578663634 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\libs\finder.cpp
+	"finder.h"
+
+1578668455 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitaccountant.cpp
+	"FruitAccountant.h"
+
+1578669071 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitaccountant.h
+	"finder.h"
+	"sort.h"
+
+1578667951 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitguiness.cpp
+	"FruitGuiness.h"
+	"FruitAccountant.h"
+
+1578667943 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitguiness.h
+	"FruitAccountant.h"
+	"finder.h"
 
