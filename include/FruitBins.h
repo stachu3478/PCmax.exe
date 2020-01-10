@@ -8,8 +8,9 @@ class FruitBins
         FruitBins(int bins);
         virtual ~FruitBins();
 
-        int getLeast();
+        int getLeast() { return getLeastWild(true); };
         int getMax();
+        int getMin() { return getLeastWild(false); };
         int addToLeast(int fruit);
         int getTotal();
         void reset() { binPtr = 0; };
@@ -21,6 +22,8 @@ class FruitBins
         int* bins;
 
         int binPtr;
+
+        int getLeastWild(bool index);
 };
 
 #endif // FRUITBINS_H

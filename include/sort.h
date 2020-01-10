@@ -3,6 +3,7 @@
 
 /// $$$$$ QUICK SORT $$$$$
 void sortItems(unsigned int* tItems, int length);
+void sortInt(int* tItems, int length);
 
 /// DO NOT FORGET ABOUT TESTS >:R
 void someTest();

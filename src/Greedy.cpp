@@ -49,7 +49,7 @@ void Greedy::verify()
         cout << endl;
         //jobs->dump();
         throw exception();
-    } else if (procs->getMax() == 152)
+    } else if (procs->getMax() == 150)
     {
         FruitMagazine* procJobs = new FruitMagazine(50, 10);
         jobs->reset();

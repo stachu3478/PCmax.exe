@@ -19,6 +19,7 @@
 #include "zach2.h"
 #include "AcoFlat.h"
 #include "FruitPicker.h"
+#include "MiniOpt.h"
 
 using namespace std;
 
@@ -39,7 +40,9 @@ void printUsage(char* name)
         << "    acosort - aco with task pre-sorting.\n"
         << "test - tests new feature of topological graphs\n"
         << "test2 - tests another feature of topological graphs\n"
-        << "test3 - integer allocation test\n";
+        << "test3 - integer allocation test\n"
+        << "test4 - Tests fruit picker\n"
+        << "test5 - tests MiniOpt class\n";
 }
 
 int main(int argc, char* argv[])
@@ -126,6 +129,10 @@ int main(int argc, char* argv[])
         {
             cout << arr[i] << endl;
         }
+    }
+    else if (cmd == "test5" || cmd == "t5")
+    {
+        MiniOpt::test();
     }
     else {
         printUsage(argv[0]);

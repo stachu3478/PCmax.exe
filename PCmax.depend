@@ -379,7 +379,7 @@
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
 
-1578408124 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
+1578646224 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -397,8 +397,9 @@
 	"zach2.h"
 	"AcoFlat.h"
 	"FruitPicker.h"
+	"MiniOpt.h"
 
-1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\sort.h
+1578646076 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\sort.h
 
 1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\processor.h
 	<string>
@@ -472,7 +473,7 @@
 	"sort.h"
 	"Processor.h"
 
-1578547390 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
+1578644903 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
 	<iostream>
 	<sort.h>
 	<ctime>
@@ -488,7 +489,7 @@
 	"sort.h"
 	"zach2.h"
 
-1578552082 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+1578650770 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
@@ -511,9 +512,9 @@
 	<stdlib.h>
 	"FruitPicker.h"
 
-1578467160 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
+1578650790 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
 
-1578467761 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
+1578650523 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
 	"FruitBins.h"
 	<iostream>
 
@@ -536,13 +537,13 @@
 	"Guiness.h"
 	<iostream>
 
-1578586690 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
+1578649957 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
 	"Greedy.h"
 	<iostream>
 	"FruitBins.h"
 	"FruitMagazine.h"
 
-1578586502 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
+1578650680 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
 	"FruitPicker.h"
 	"FruitBins.h"
 	"Guiness.h"
@@ -559,4 +560,11 @@
 
 1578584965 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitmagazine.h
 	"FruitCase.h"
+
+1578649689 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
+	"MiniOpt.h"
+	<iostream>
+	"sort.h"
+
+1578647808 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\miniopt.h
 

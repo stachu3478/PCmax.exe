@@ -17,6 +17,7 @@ class Greedy
         int step(int j);
         int stepId(int jId);
         int getSolution();
+        int getMin() { return procs->getMin(); };
         void verify();
         void reset();
 

@@ -9,7 +9,7 @@ FruitBins::FruitBins(int n)
     binPtr = 0;
 }
 
-int FruitBins::getLeast()
+int FruitBins::getLeastWild(bool index)
 {
     int minWeight = 294967295;
     int minBin = 0;
@@ -22,9 +22,10 @@ int FruitBins::getLeast()
             minBin = i;
         }
     }
-    return minBin;
+    if (index)
+        return minBin;
+    return minWeight;
 }
-
 
 int FruitBins::getMax()
 {
