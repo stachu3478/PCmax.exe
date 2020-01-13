@@ -25,6 +25,7 @@ class Greedy
         int getLastJob() { return jobQueue[jobPtr - 1]; };
         int getJobCount() { return nJobs; };
         int* getJobQueue() { return jobQueue; };
+        bool wasRecord() { return lastRecord; };
 
         void setRecorder(Guiness* r) { recorder = r; };
         void pointRec(int id) { recordPtr = id; };
@@ -41,6 +42,8 @@ class Greedy
         FruitBins* procs;
         int totalTime;
         int worstSolution;
+
+        bool lastRecord;
 
         Guiness* recorder;
         int recordPtr;

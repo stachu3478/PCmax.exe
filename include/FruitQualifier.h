@@ -13,6 +13,7 @@ class FruitQualifier
         // int getBiggest(int group) { return groups[group]->getBiggest(); };
         int getBiggest(int group, int* indexes, int n) { return groups[group].getBiggest(indexes, n); };
         void grow(int group, int fruit, int s) { groups[group].grow(fruit, s); };
+        void shrink(int percent);
 
     protected:
 

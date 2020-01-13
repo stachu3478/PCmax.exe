@@ -379,7 +379,7 @@
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
 
-1578646224 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
+1578895601 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -398,6 +398,8 @@
 	"AcoFlat.h"
 	"FruitPicker.h"
 	"MiniOpt.h"
+	"Colony.h"
+	"AntColony.h"
 
 1578646076 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\sort.h
 
@@ -540,13 +542,13 @@
 	"Guiness.h"
 	<iostream>
 
-1578649957 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
+1578894154 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
 	"Greedy.h"
 	<iostream>
 	"FruitBins.h"
 	"FruitMagazine.h"
 
-1578650680 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
+1578894092 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
 	"FruitPicker.h"
 	"FruitBins.h"
 	"Guiness.h"
@@ -564,10 +566,11 @@
 1578584965 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitmagazine.h
 	"FruitCase.h"
 
-1578669155 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
+1578669482 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
 	"MiniOpt.h"
 	<iostream>
 	"sort.h"
+	"FruitAccountant.h"
 
 1578668878 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\miniopt.h
 	"FruitAccountant.h"
@@ -591,4 +594,29 @@
 1578667943 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitguiness.h
 	"FruitAccountant.h"
 	"finder.h"
+
+1578893953 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\colony.cpp
+	"Colony.h"
+	<stdlib.h>
+	<iostream>
+
+1578893628 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\colony.h
+
+1578895650 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\algs\antcolony.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"Greedy.h"
+	"Colony.h"
+
+1578895668 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\algs\antcolony.cpp
+	"AntColony.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Colony.h"
 

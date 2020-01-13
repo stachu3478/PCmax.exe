@@ -9,8 +9,12 @@ void FruitGroup::setSize(int n)
 {
     growth = new int[n];
     nFruits = n;
+    shrinkStates = new double[n];
     for (int i = 0; i < n; i++)
+    {
         growth[i] = 0;
+        shrinkStates[i] = 1.0;
+    }
 }
 
 void FruitGroup::grow(int fruit, int s)
@@ -19,6 +23,11 @@ void FruitGroup::grow(int fruit, int s)
     // useless
     // if (current > biggest)
     //    biggest = current;
+}
+
+void FruitGroup::shrink(int percent)
+{
+ //TODO implement
 }
 
 int FruitGroup::getBiggest(int* indexes, int n)

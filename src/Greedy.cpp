@@ -98,7 +98,12 @@ int Greedy::getSolution()
 {
     int solution = procs->getMax();
     if (recorder->process(recordPtr, solution))
+    {
+        lastRecord = true;
         verify();
+    }
+    else
+        lastRecord = false;
     return solution;
 }
 

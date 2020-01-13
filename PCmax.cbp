@@ -11,13 +11,14 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="test5 solve C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt acoflat" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt antcolony" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
 					<Add directory="include/helpers" />
 					<Add directory="include/utils" />
 					<Add directory="include/libs" />
+					<Add directory="include/algs" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,6 +33,7 @@
 					<Add directory="include/helpers" />
 					<Add directory="include/utils" />
 					<Add directory="include/libs" />
+					<Add directory="include/algs" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -49,6 +51,7 @@
 		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
+		<Unit filename="include/Colony.h" />
 		<Unit filename="include/FruitBins.h" />
 		<Unit filename="include/FruitGroup.h" />
 		<Unit filename="include/FruitPicker.h" />
@@ -58,6 +61,7 @@
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
+		<Unit filename="include/algs/AntColony.h" />
 		<Unit filename="include/helpers/Guiness.h" />
 		<Unit filename="include/libs/finder.h" />
 		<Unit filename="include/sort.h" />
@@ -72,6 +76,7 @@
 		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />
+		<Unit filename="src/Colony.cpp" />
 		<Unit filename="src/FruitBins.cpp" />
 		<Unit filename="src/FruitGroup.cpp" />
 		<Unit filename="src/FruitPicker.cpp" />
@@ -81,6 +86,7 @@
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />
 		<Unit filename="src/TGraph.cpp" />
+		<Unit filename="src/algs/AntColony.cpp" />
 		<Unit filename="src/helpers/Guiness.cpp" />
 		<Unit filename="src/libs/finder.cpp" />
 		<Unit filename="src/sort.cpp" />

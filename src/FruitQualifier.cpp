@@ -9,6 +9,12 @@ FruitQualifier::FruitQualifier(int nGroups, int perGroup)
         groups[i].setSize(perGroup);
 }
 
+void FruitQualifier::shrink(int percent)
+{
+    for (int i = 0; i < nGroups; i++)
+        groups[i].shrink(percent);
+}
+
 FruitQualifier::~FruitQualifier()
 {
     //dtor
