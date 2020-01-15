@@ -1,0 +1,622 @@
+# depslib dependency file v1.0
+1575486583 source:c:\users\stach\desktop\pcmax\pcmax\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+
+1575493283 c:\users\stach\desktop\pcmax\pcmax\include\processor.h
+	<string>
+
+1575493283 source:c:\users\stach\desktop\pcmax\pcmax\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1572362709 source:e:\local reposit\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<Processor.h>
+	<Generator.h>
+
+1572360910 e:\local reposit\pcmax.exe\include\processor.h
+	<string>
+
+1572361215 source:e:\local reposit\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"Processor.h"
+
+1572359679 source:e:\local reposit\pcmax.exe\generator.c
+
+1572366634 source:e:\local reposit\pcmax.exe\src\generator.cpp
+	"Generator.h"
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+
+1572366065 e:\local reposit\pcmax.exe\include\generator.h
+
+1573503002 source:e:\local reposit\pcmax_new\generator.c
+
+1573569877 source:e:\local reposit\pcmax_new\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+
+1573502136 e:\local reposit\pcmax_new\include\sort.h
+
+1573502136 e:\local reposit\pcmax_new\include\processor.h
+	<string>
+
+1573503002 e:\local reposit\pcmax_new\generator.h
+
+1573502136 source:e:\local reposit\pcmax_new\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1573502136 e:\local reposit\pcmax_new\include\generator.h
+
+1573502136 source:e:\local reposit\pcmax_new\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1573502136 source:e:\local reposit\pcmax_new\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574710589 source:c:\users\stach\desktop\pcmax\pcmax\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1574710589 c:\users\stach\desktop\pcmax\pcmax\include\generator.h
+
+1573496274 c:\users\stach\desktop\pcmax\pcmax\include\sort.h
+
+1573501950 source:c:\users\stach\desktop\pcmax\pcmax\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574708700 source:c:\users\stach\desktop\pcmax\pcmax\generator.c
+
+1574719185 source:c:\users\stach\desktop\pcmax\pcmax\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1574718888 c:\users\stach\desktop\pcmax\pcmax\include\tgraph.h
+	"AntNode.h"
+
+1574708700 c:\users\stach\desktop\pcmax\pcmax\generator.h
+
+1575408528 source:c:\users\stach\desktop\pcmax\pcmax\src\antnode.cpp
+	"AntNode.h"
+
+1575408526 c:\users\stach\desktop\pcmax\pcmax\include\antnode.h
+
+1575491984 c:\users\stach\desktop\pcmax\pcmax\include\nestlevel.h
+	"AntNode.h"
+
+1575491984 source:c:\users\stach\desktop\pcmax\pcmax\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575492330 source:c:\users\stach\desktop\pcmax\pcmax\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575492002 c:\users\stach\desktop\pcmax\pcmax\include\ant.h
+	"NestLevel.h"
+
+1575493156 c:\users\stach\desktop\pcmax\pcmax\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1575493283 source:c:\users\stach\desktop\pcmax\pcmax\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\generator.c
+
+1576139947 source:d:\skrypty\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+	"zach2.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\sort.h
+
+1575983325 d:\skrypty\pcmax.exe\include\processor.h
+	<string>
+
+1575983325 d:\skrypty\pcmax.exe\generator.h
+
+1575983325 d:\skrypty\pcmax.exe\include\tgraph.h
+	"AntNode.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\antnode.h
+
+1575983325 d:\skrypty\pcmax.exe\include\nestlevel.h
+	"AntNode.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\ant.h
+	"NestLevel.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\antnode.cpp
+	"AntNode.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1575983325 d:\skrypty\pcmax.exe\include\generator.h
+
+1575983325 source:d:\skrypty\pcmax.exe\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1575983325 source:d:\skrypty\pcmax.exe\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1575983325 source:d:\skrypty\pcmax.exe\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1575984070 source:d:\skrypty\pcmax.exe\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1576139642 source:d:\skrypty\pcmax.exe\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1576138616 d:\skrypty\pcmax.exe\include\zach2.h
+
+1574708700 source:c:\users\stach\desktop\repo\pcmax\pcmax\generator.c
+
+1575492330 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1575492002 c:\users\stach\desktop\repo\pcmax\pcmax\include\ant.h
+	"NestLevel.h"
+
+1575491984 c:\users\stach\desktop\repo\pcmax\pcmax\include\nestlevel.h
+	"AntNode.h"
+
+1575408526 c:\users\stach\desktop\repo\pcmax\pcmax\include\antnode.h
+
+1575408528 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antnode.cpp
+	"AntNode.h"
+
+1574710589 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1574710589 c:\users\stach\desktop\repo\pcmax\pcmax\include\generator.h
+
+1575491984 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1575493283 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1573496274 c:\users\stach\desktop\repo\pcmax\pcmax\include\sort.h
+
+1575493283 c:\users\stach\desktop\repo\pcmax\pcmax\include\processor.h
+	<string>
+
+1573501950 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1574719185 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1574718888 c:\users\stach\desktop\repo\pcmax\pcmax\include\tgraph.h
+	"AntNode.h"
+
+1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+	"zach2.h"
+	"AcoFlat.h"
+	"FruitPicker.h"
+
+1574708700 c:\users\stach\desktop\repo\pcmax\pcmax\generator.h
+
+1575493156 c:\users\stach\desktop\repo\pcmax\pcmax\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1577445690 c:\users\stach\desktop\repo\pcmax\pcmax\include\zach2.h
+
+1577445690 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1577460680 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1577481737 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\acoflat.cpp
+	"AcoFlat.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+
+1578428787 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
+	"FruitPicker.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
+
+1578895601 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	<ctime>
+	<stdlib.h>
+	<cstdio>
+	<string>
+	<cstring>
+	"sort.h"
+	"Processor.h"
+	"Generator.h"
+	"TGraph.h"
+	"NestLevel.h"
+	"AntSolver.h"
+	"zach2.h"
+	"AcoFlat.h"
+	"FruitPicker.h"
+	"MiniOpt.h"
+	"Colony.h"
+	"AntColony.h"
+
+1578646076 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\sort.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\processor.h
+	<string>
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\tgraph.h
+	"AntNode.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\antnode.h
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\nestlevel.h
+	"AntNode.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\antsolver.h
+	"NestLevel.h"
+	"Ant.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\ant.h
+	"NestLevel.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\zach2.h
+
+1578552089 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\acoflat.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"Greedy.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\ant.cpp
+	"Ant.h"
+	<iostream>
+	"NestLevel.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\antnode.cpp
+	"AntNode.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\antsolver.cpp
+	<fstream>
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	<windows.h>
+	"AntSolver.h"
+	"sort.h"
+	"Processor.h"
+	"NestLevel.h"
+	"Ant.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\generator.cpp
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<cstdio>
+	<ctime>
+	"Generator.h"
+
+1578372599 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\generator.h
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\nestlevel.cpp
+	"NestLevel.h"
+	<iostream>
+	<stdlib.h>
+	<cmath>
+	"AntNode.h"
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\processor.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"Processor.h"
+
+1578644903 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\sort.cpp
+	<iostream>
+	<sort.h>
+	<ctime>
+	<stdlib.h>
+
+1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\tgraph.cpp
+	"TGraph.h"
+	<iostream>
+
+1578463217 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\zach2.cpp
+	<fstream>
+	<iostream>
+	"sort.h"
+	"zach2.h"
+
+1578650908 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\acoflat.cpp
+	"AcoFlat.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
+
+1578489857 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitpicker.h
+
+1578551776 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitpicker.cpp
+	<iostream>
+	<stdlib.h>
+	"FruitPicker.h"
+
+1578428232 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitpicker.h
+
+1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitpicker.cpp
+	<iostream>
+	<stdlib.h>
+	"FruitPicker.h"
+
+1578664494 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitbins.h
+	"finder.h"
+
+1578668677 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitbins.cpp
+	"FruitBins.h"
+	<iostream>
+	"finder.h"
+
+1578551445 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitqualifier.h
+	"FruitGroup.h"
+
+1578663971 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\fruitgroup.h
+	"finder.h"
+
+1578663963 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitgroup.cpp
+	"FruitGroup.h"
+
+1578490338 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\fruitqualifier.cpp
+	"FruitQualifier.h"
+	"FruitGroup.h"
+
+1578493786 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\helpers\guiness.h
+	<string>
+
+1578494157 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\helpers\guiness.cpp
+	"Guiness.h"
+	<iostream>
+
+1578894154 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\greedy.cpp
+	"Greedy.h"
+	<iostream>
+	"FruitBins.h"
+	"FruitMagazine.h"
+
+1578894092 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\greedy.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Guiness.h"
+
+1578585629 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitcase.cpp
+	"FruitCase.h"
+	<iostream>
+
+1578584983 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitcase.h
+
+1578585640 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitmagazine.cpp
+	"FruitMagazine.h"
+	"FruitCase.h"
+
+1578584965 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitmagazine.h
+	"FruitCase.h"
+
+1578669482 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\miniopt.cpp
+	"MiniOpt.h"
+	<iostream>
+	"sort.h"
+	"FruitAccountant.h"
+
+1578668878 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\miniopt.h
+	"FruitAccountant.h"
+
+1578664003 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\libs\finder.h
+
+1578663634 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\libs\finder.cpp
+	"finder.h"
+
+1578668455 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitaccountant.cpp
+	"FruitAccountant.h"
+
+1578669071 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitaccountant.h
+	"finder.h"
+	"sort.h"
+
+1578667951 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\utils\fruitguiness.cpp
+	"FruitGuiness.h"
+	"FruitAccountant.h"
+
+1578667943 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\utils\fruitguiness.h
+	"FruitAccountant.h"
+	"finder.h"
+
+1578893953 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\colony.cpp
+	"Colony.h"
+	<stdlib.h>
+	<iostream>
+
+1578893628 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\colony.h
+
+1578895650 c:\users\stach\onedrive\pulpit\repo\pcmax.exe\include\algs\antcolony.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"Greedy.h"
+	"Colony.h"
+
+1578895668 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\src\algs\antcolony.cpp
+	"AntColony.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Colony.h"
+

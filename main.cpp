@@ -16,6 +16,12 @@
 #include "TGraph.h"
 #include "NestLevel.h"
 #include "AntSolver.h"
+#include "zach2.h"
+#include "AcoFlat.h"
+#include "FruitPicker.h"
+#include "MiniOpt.h"
+#include "Colony.h"
+#include "AntColony.h"
 
 using namespace std;
 
@@ -30,12 +36,17 @@ void printUsage(char* name)
         << "    \"m30.txt\" by default\n"
         << "    <type> algorithm type you want to use. Available ones are:\n"
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
+        << "    greedy2 - Some other point of view.\n"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
         << "    aco - Uses graph system and ant behavioral system.\n"
         << "    acosort - aco with task pre-sorting.\n"
+        << "    antcolony - ^^ + colony\n"
         << "test - tests new feature of topological graphs\n"
         << "test2 - tests another feature of topological graphs\n"
-        << "test3 - integer allocation test\n";
+        << "test3 - integer allocation test\n"
+        << "test4 - Tests fruit picker\n"
+        << "test5 - tests MiniOpt class\n"
+        << "test6 - tests colony class\n";
 }
 
 int main(int argc, char* argv[])
@@ -72,7 +83,7 @@ int main(int argc, char* argv[])
     {
         char* file = "m30.txt";
         if (argc > 2) file = argv[2];
-        string type = "aco";
+        string type = "acoflat";
         if (argc > 3) type = argv[3];
         clock_t start = clock();
 
@@ -82,7 +93,10 @@ int main(int argc, char* argv[])
         if (type == "greedy") Processor::solve(file);
         else if (type == "presort") Processor::solveSorted(file, O);
         else if (type == "aco") new AntSolver(file);
-        else
+        else if (type == "greedy2") new zach2(file, false);
+        else if (type == "greedy3") new zach2(file, true);
+        else if (type == "acoflat") new AcoFlat(file);
+        else if (type == "antcolony") new AntColony(file);
         {
             printUsage(argv[0]);
             return 0;
@@ -109,6 +123,10 @@ int main(int argc, char* argv[])
     {
         NestLevel::test();
     }
+    else if (cmd == "test4" || cmd == "t4")
+    {
+        FruitPicker::test();
+    }
     else if (cmd == "test3" || cmd == "t3")
     {
         int* arr = new int[10];
@@ -116,6 +134,14 @@ int main(int argc, char* argv[])
         {
             cout << arr[i] << endl;
         }
+    }
+    else if (cmd == "test5" || cmd == "t5")
+    {
+        MiniOpt::test();
+    }
+    else if (cmd == "test6" || cmd == "t")
+    {
+        Colony::test();
     }
     else {
         printUsage(argv[0]);

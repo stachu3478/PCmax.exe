@@ -11,9 +11,14 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50n200.txt antcolony" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
+					<Add directory="include/helpers" />
+					<Add directory="include/utils" />
+					<Add directory="include/libs" />
+					<Add directory="include/algs" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -21,9 +26,14 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="test4" />
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="include/helpers" />
+					<Add directory="include/utils" />
+					<Add directory="include/libs" />
+					<Add directory="include/algs" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -37,23 +47,55 @@
 		<Unit filename="generator.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/AcoFlat.h" />
 		<Unit filename="include/Ant.h" />
 		<Unit filename="include/AntNode.h" />
 		<Unit filename="include/AntSolver.h" />
+		<Unit filename="include/Colony.h" />
+		<Unit filename="include/FruitBins.h" />
+		<Unit filename="include/FruitGroup.h" />
+		<Unit filename="include/FruitPicker.h" />
+		<Unit filename="include/FruitQualifier.h" />
 		<Unit filename="include/Generator.h" />
+		<Unit filename="include/Greedy.h" />
 		<Unit filename="include/NestLevel.h" />
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
+		<Unit filename="include/algs/AntColony.h" />
+		<Unit filename="include/helpers/Guiness.h" />
+		<Unit filename="include/libs/finder.h" />
 		<Unit filename="include/sort.h" />
+		<Unit filename="include/utils/FruitAccountant.h" />
+		<Unit filename="include/utils/FruitCase.h" />
+		<Unit filename="include/utils/FruitGuiness.h" />
+		<Unit filename="include/utils/FruitMagazine.h" />
+		<Unit filename="include/utils/MiniOpt.h" />
+		<Unit filename="include/zach2.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AcoFlat.cpp" />
 		<Unit filename="src/Ant.cpp" />
 		<Unit filename="src/AntNode.cpp" />
 		<Unit filename="src/AntSolver.cpp" />
+		<Unit filename="src/Colony.cpp" />
+		<Unit filename="src/FruitBins.cpp" />
+		<Unit filename="src/FruitGroup.cpp" />
+		<Unit filename="src/FruitPicker.cpp" />
+		<Unit filename="src/FruitQualifier.cpp" />
 		<Unit filename="src/Generator.cpp" />
+		<Unit filename="src/Greedy.cpp" />
 		<Unit filename="src/NestLevel.cpp" />
 		<Unit filename="src/Processor.cpp" />
 		<Unit filename="src/TGraph.cpp" />
+		<Unit filename="src/algs/AntColony.cpp" />
+		<Unit filename="src/helpers/Guiness.cpp" />
+		<Unit filename="src/libs/finder.cpp" />
 		<Unit filename="src/sort.cpp" />
+		<Unit filename="src/utils/FruitAccountant.cpp" />
+		<Unit filename="src/utils/FruitCase.cpp" />
+		<Unit filename="src/utils/FruitGuiness.cpp" />
+		<Unit filename="src/utils/FruitMagazine.cpp" />
+		<Unit filename="src/utils/MiniOpt.cpp" />
+		<Unit filename="src/zach2.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

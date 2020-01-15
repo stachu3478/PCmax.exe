@@ -16,8 +16,7 @@ void sortItems(unsigned int* tItems, int length)
             tItems[j] = tItems[i];
             tItems[i] = tItem;
         }
-        i++;
-    } while (i < j);
+    } while (++i < j);
     if (i > 1)
     {
         sortItems(tItems, i);
@@ -25,6 +24,28 @@ void sortItems(unsigned int* tItems, int length)
     if (j < length - 2)
     {
         sortItems(tItems + j, length - j - 1);
+    }
+}
+
+void sortInt(int* tItems, int length)
+{
+    int i = 0, j = length - 1;
+    do
+    {
+        if (tItems[j] > tItems[i])
+        {
+            int tItem = tItems[j];
+            tItems[j] = tItems[i];
+            tItems[i] = tItem;
+        }
+    } while (++i < j);
+    if (i > 1)
+    {
+        sortInt(tItems, i);
+    }
+    if (j < length - 2)
+    {
+        sortInt(tItems + j, length - j - 1);
     }
 }
 
