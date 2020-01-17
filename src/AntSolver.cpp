@@ -36,7 +36,7 @@ void hello()
     SetConsoleTextAttribute(hConsole, 15);
 }
 
-AntSolver::AntSolver(char* file)
+AntSolver::AntSolver(char* file, bool sorted)
 {
     hello();
     ifstream source(file);
@@ -49,11 +49,15 @@ AntSolver::AntSolver(char* file)
     {
         source >> tasks[i];
     }
-    sortItems(tasks, nTasks);
 
     unsigned int greedySolution = 0;
     unsigned int& solRef = greedySolution;
-    unsigned int* cond = Processor::solveSorted(file, solRef);
+    unsigned int* cond;
+    if (sorted) {
+        cond = Processor::solveSorted(file, solRef);
+        sortItems(tasks, nTasks);
+    }
+    else cond = Processor::solve(file, solRef);
 
     NestLevel::FEROMON_INTEGRITY = (1.0 - (1.0 / nTasks)) * 1000;
     cout << NestLevel::FEROMON_INTEGRITY << endl;

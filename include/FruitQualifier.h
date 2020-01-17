@@ -18,6 +18,7 @@ class FruitQualifier
     protected:
 
     private:
+        int nGroups;
         FruitGroup* groups;
 };
 

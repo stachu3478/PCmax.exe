@@ -8,7 +8,7 @@ class AntSolver
 {
     public:
         /** Default constructor */
-        AntSolver(char* file);
+        AntSolver(char* file, bool sorted);
         /** Default destructor */
         virtual ~AntSolver();
 

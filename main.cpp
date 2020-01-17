@@ -22,6 +22,7 @@
 #include "MiniOpt.h"
 #include "Colony.h"
 #include "AntColony.h"
+#include "Guiness.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ void printUsage(char* name)
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
         << "    aco - Uses graph system and ant behavioral system.\n"
         << "    acosort - aco with task pre-sorting.\n"
+        << "    acoflat - Uses graph system based on procs a vertices"
         << "    antcolony - ^^ + colony\n"
         << "test - tests new feature of topological graphs\n"
         << "test2 - tests another feature of topological graphs\n"
@@ -90,9 +92,10 @@ int main(int argc, char* argv[])
         unsigned int o = 0;
         unsigned int& O = o;
 
-        if (type == "greedy") Processor::solve(file);
+        if (type == "greedy") Processor::solve(file, o);
         else if (type == "presort") Processor::solveSorted(file, O);
-        else if (type == "aco") new AntSolver(file);
+        else if (type == "aco") new AntSolver(file, false);
+        else if (type == "acosort") new AntSolver(file, true);
         else if (type == "greedy2") new zach2(file, false);
         else if (type == "greedy3") new zach2(file, true);
         else if (type == "acoflat") new AcoFlat(file);
@@ -139,9 +142,13 @@ int main(int argc, char* argv[])
     {
         MiniOpt::test();
     }
-    else if (cmd == "test6" || cmd == "t")
+    else if (cmd == "test6" || cmd == "t6")
     {
         Colony::test();
+    }
+    else if (cmd == "test7" || cmd == "t7")
+    {
+        Guiness::test();
     }
     else {
         printUsage(argv[0]);

@@ -12,6 +12,7 @@ class Guiness
         void setName(int index, std::string name) { names[index] = name; };
         bool process(int index, int record);
         void report();
+        static void test();
     protected:
 
     private:
