@@ -23,6 +23,7 @@
 #include "Colony.h"
 #include "AntColony.h"
 #include "Guiness.h"
+#include "Metropolis.h"
 
 using namespace std;
 
@@ -39,11 +40,13 @@ void printUsage(char* name)
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
         << "    greedy2 - Some other point of view.\n"
         << "    greedy3 - greedy2 v2\n"
+        << "    gg3 - grasp run of choice between LTP and greedy3"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
         << "    aco - Uses graph system and ant behavioral system.\n"
         << "    acosort - aco with task pre-sorting.\n"
         << "    acoflat - Uses graph system based on procs a vertices"
         << "    antcolony - ^^ + colony\n"
+        << "    metropolis - -=<{[( TRY ME )]}>=-"
         << "test - tests new feature of topological graphs\n"
         << "test2 - tests another feature of topological graphs\n"
         << "test3 - integer allocation test\n"
@@ -92,19 +95,23 @@ int main(int argc, char* argv[])
 
         unsigned int o = 0;
         unsigned int& O = o;
+        srand(time(NULL));
 
         if (type == "greedy") Processor::solve(file, o);
         else if (type == "presort") Processor::solveSorted(file, O);
         else if (type == "aco") new AntSolver(file, false);
         else if (type == "acosort") new AntSolver(file, true);
-        else if (type == "greedy2") new zach2(file, false);
-        else if (type == "greedy3") new zach2(file, true);
+        else if (type == "greedy2") new zach2(file, 0);
+        else if (type == "greedy3") new zach2(file, 1);
+        else if (type == "gg3") new zach2(file, 2);
         else if (type == "acoflat") new AcoFlat(file);
         else if (type == "antcolony") new AntColony(file);
+        else if (type == "metropolis") new Metropolis(file);
+        else
         {
             printUsage(argv[0]);
             return 0;
-        }
+        };
 
         cout<<"Czas wykonywania: "<< clock() - start <<" ms"<<endl;
     }

@@ -4,8 +4,49 @@
 #include "sort.h"
 #include "zach2.h"
 #include "cmath"
+#include "stdlib.h"
 
 using namespace std;
+
+void zach2::reset()
+{
+    pos = 0;
+    for (int i = 0; i < nProcessors; i++)
+        sumP[i] = 0;
+}
+
+// Before-Critical Least Processor Index
+void zach2::step(bool bclpi)
+{
+    int cMin = 99999999;
+    int assigned = false;
+    int cMinIndex;
+    for (int nP = 0; nP < nProcessors; nP++)
+    {
+        int afterAddSum = sumP[nP] + tasks[pos];
+        // detect mode TODO to optimization
+        if (bclpi && afterAddSum <= cMaxLimit) {
+            sumP[nP] = afterAddSum;
+            pBind[pos++] = nP;
+            assigned = true;
+            // procJobs->add(nP, tasks[pos++]);
+            // cout << "Assigned " << nP << " " << tasks[pos++] << endl;
+            break;
+        }
+        if (afterAddSum < cMin)
+        {
+            cMin = afterAddSum;
+            cMinIndex = nP;
+        }
+    }
+    if (!assigned)
+    {
+        sumP[cMinIndex] = cMin;
+        pBind[pos++] = cMinIndex;
+        // cout << "Not assigned " << cMinIndex << endl;
+        // procJobs->add(cMinIndex, tasks[pos++]);
+    }
+}
 
 void zach2::bind1()
 {
@@ -29,48 +70,60 @@ void zach2::bind1()
     };
 }
 
-void zach2::bind2()
+int zach2::getSolution()
 {
-    taskSum = 0;
-    for (int i = 0; i < nProcessors; i++)
-        sumP[i] = 0;
-    for (int i = 0; i < nTasks; i++)
-        taskSum += tasks[i];
-    cMaxLimit = (int)ceil((float)taskSum / (float)nProcessors);
-    cout << "cmaxLimit: " << cMaxLimit << endl;
-    for (unsigned int j = 0; j < nTasks; j++)
+    int solution = 0;
+    for (unsigned int i = 0; i < nProcessors; i++)
     {
-        int cMin = 99999999;
-        int assigned = false;
-        int cMinIndex;
-        for (int nP = 0; nP < nProcessors; nP++)
-        {
-            int afterAddSum;
-            if ((afterAddSum = sumP[nP] + tasks[j]) <= cMaxLimit) {
-                sumP[nP] = afterAddSum;
-                pBind[j] = nP;
-                assigned = true;
-                procJobs->add(nP, tasks[j]);
-                // cout << "Assigned: " << nP << endl;
-                break;
-            }
-            if (afterAddSum < cMin)
-            {
-                cMin = afterAddSum;
-                cMinIndex = nP;
-            }
-        }
-        if (!assigned)
-        {
-            sumP[cMinIndex] = cMin;
-            pBind[j] = cMinIndex;
-            procJobs->add(cMinIndex, tasks[j]);
-            // cout << "Not assigned: " << cMinIndex << endl;
-        }
+        if (sumP[i] > solution) solution = sumP[i];
     }
+    if (recorder->process(recordPtr, solution))
+    {
+        lastRecord = true;
+    }
+    else
+        lastRecord = false;
+    return solution;
 }
 
-zach2::zach2(char* file, bool v3)
+// For our master
+void zach2::bind2()
+{
+    reset();
+    for (unsigned int j = 0; j < nTasks; j++)
+        step(true);
+}
+
+void zach2::bind3()
+{
+    reset();
+    for (unsigned int j = 0; j < nTasks; j++)
+        step(false);
+}
+
+void zach2::init()
+{
+    taskSum = 0;
+    for (int i = 0; i < nTasks; i++)
+        taskSum += tasks[i];
+    sortInt(tasks, nTasks);
+    cMaxLimit = (int)ceil((float)taskSum / (float)nProcessors);
+    cout << "cmaxLimit: " << cMaxLimit << endl;
+    recordPtr = 0;
+    pos = 0;
+}
+
+zach2::zach2(int p, int* j, int n)
+{
+    tasks = j;
+    nProcessors = p;
+    nTasks = n;
+    sumP = new int[p];
+    pBind = new int[n];
+    init();
+}
+
+zach2::zach2(char* file, int type)
 {
     ifstream source(file);
     cout << "File opened\n";
@@ -78,35 +131,30 @@ zach2::zach2(char* file, bool v3)
     source >> nTasks;
     cout << nProcessors << endl;
     cout << "Processors defined\n";
-    tasks = new unsigned int[nTasks];
+    tasks = new int[nTasks];
     sumP = new int[nProcessors];
     pBind = new int[nTasks];
-    procJobs = new FruitMagazine(nProcessors, 100);
+    recorder = new Guiness(2, 999);
+    // procJobs = new FruitMagazine(nProcessors, 100);
     for (unsigned int i = 0; i < nTasks; i++)
     {
         source >> tasks[i];
         pBind[i] = 0;
     }
-    sortItems(tasks, nTasks);
 
-    if (v3)
-        bind2();
-    else
+    init();
+    reset();
+    if (type == 0)
         bind1();
+    else if (type == 1)
+        bind2();
+    else if (type == 2) for (unsigned int j = 0; j < nTasks; j++)
+        step((rand() % 2) == 1);
+    else return;
 
-    procJobs->printContents();
+    // procJobs->printContents();
 
-    sumP[0] = 0;
-    for (unsigned int i = 0; i < nTasks; i++)
-    {
-        if (pBind[i] == 0) sumP[0] += tasks[i];
-    }
-    cout << 0 << " Total sum control: " << sumP[0] << endl;
-    int cmax = 0;
-    for (unsigned int i = 0; i < nProcessors; i++)
-    {
-        if (sumP[i] > cmax) cmax = sumP[i];
-    }
+    int cmax = getSolution();
     cout << "Solution: " << cmax << endl;
 }
 

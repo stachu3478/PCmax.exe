@@ -469,27 +469,18 @@
 	<cmath>
 	"AntNode.h"
 
-1575493283 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\processor.cpp
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\processor.cpp
 	<fstream>
 	<iostream>
 	"sort.h"
 	"Processor.h"
-	<fstream>
-	<iostream>
-	"sort.h"
-	"Processor.h"
 
-1573496274 c:\users\stach\desktop\repo\pcmax\pcmax\include\sort.h
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\sort.h
 
-1575493283 c:\users\stach\desktop\repo\pcmax\pcmax\include\processor.h
-	<string>
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\processor.h
 	<string>
 
-1573501950 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\sort.cpp
-	<iostream>
-	<sort.h>
-	<ctime>
-	<stdlib.h>
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\sort.cpp
 	<iostream>
 	<sort.h>
 	<ctime>
@@ -505,7 +496,7 @@
 	"AntNode.h"
 	"AntNode.h"
 
-1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
+1579298260 source:c:\users\stach\desktop\repo\pcmax\pcmax\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -523,45 +514,23 @@
 	"zach2.h"
 	"AcoFlat.h"
 	"FruitPicker.h"
-	<iostream>
-	<fstream>
-	<time.h>
-	<ctime>
-	<stdlib.h>
-	<cstdio>
-	<string>
-	<cstring>
-	"sort.h"
-	"Processor.h"
-	"Generator.h"
-	"TGraph.h"
-	"NestLevel.h"
-	"AntSolver.h"
-	"zach2.h"
-	"AcoFlat.h"
-	"FruitPicker.h"
+	"MiniOpt.h"
+	"Colony.h"
+	"AntColony.h"
+	"Guiness.h"
+	"Metropolis.h"
 
 1574708700 c:\users\stach\desktop\repo\pcmax\pcmax\generator.h
 
-1575493156 c:\users\stach\desktop\repo\pcmax\pcmax\include\antsolver.h
-	"NestLevel.h"
-	"Ant.h"
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\antsolver.h
 	"NestLevel.h"
 	"Ant.h"
 
-1577445690 c:\users\stach\desktop\repo\pcmax\pcmax\include\zach2.h
+1579302198 c:\users\stach\desktop\repo\pcmax\pcmax\include\zach2.h
+	"FruitMagazine.h"
+	"Guiness.h"
 
-1577445690 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antsolver.cpp
-	<fstream>
-	<iostream>
-	<ctime>
-	<stdlib.h>
-	<windows.h>
-	"AntSolver.h"
-	"sort.h"
-	"Processor.h"
-	"NestLevel.h"
-	"Ant.h"
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\antsolver.cpp
 	<fstream>
 	<iostream>
 	<ctime>
@@ -573,31 +542,29 @@
 	"NestLevel.h"
 	"Ant.h"
 
-1577460680 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\zach2.cpp
+1579299735 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\zach2.cpp
 	<fstream>
 	<iostream>
 	"sort.h"
 	"zach2.h"
-	<fstream>
-	<iostream>
-	"sort.h"
-	"zach2.h"
+	"cmath"
+	"stdlib.h"
 
-1577481737 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\acoflat.cpp
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\acoflat.cpp
 	"AcoFlat.h"
 	<stdlib.h>
 	<ctime>
 	<fstream>
 	<iostream>
-	"AcoFlat.h"
-	<stdlib.h>
-	<ctime>
-	<fstream>
-	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
 
-1578428787 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\acoflat.h
 	"FruitPicker.h"
-	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"Greedy.h"
 
 1578372599 source:c:\users\stach\onedrive\pulpit\repo\pcmax.exe\generator.c
 
@@ -771,7 +738,7 @@
 	<stdlib.h>
 	"FruitPicker.h"
 
-1578428232 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitpicker.h
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitpicker.h
 
 1578428232 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitpicker.cpp
 	<iostream>
@@ -928,4 +895,127 @@
 1578895968 
 
 1578895968 ependency file v1.0
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitbins.h
+	"finder.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\libs\finder.h
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitqualifier.h
+	"FruitGroup.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\fruitgroup.h
+	"finder.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\helpers\guiness.h
+	<string>
+
+1579302171 c:\users\stach\desktop\repo\pcmax\pcmax\include\greedy.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Guiness.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\algs\antcolony.cpp
+	"AntColony.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
+	"Colony.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\algs\antcolony.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"Greedy.h"
+	"Colony.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\colony.h
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\colony.cpp
+	"Colony.h"
+	<stdlib.h>
+	<iostream>
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitbins.cpp
+	"FruitBins.h"
+	<iostream>
+	"finder.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitgroup.cpp
+	"FruitGroup.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\fruitqualifier.cpp
+	"FruitQualifier.h"
+	"FruitGroup.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\greedy.cpp
+	"Greedy.h"
+	<iostream>
+	"FruitBins.h"
+	"FruitMagazine.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\utils\fruitmagazine.h
+	"FruitCase.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\utils\fruitcase.h
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\helpers\guiness.cpp
+	"Guiness.h"
+	<iostream>
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\libs\finder.cpp
+	"finder.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\utils\fruitaccountant.cpp
+	"FruitAccountant.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\utils\fruitaccountant.h
+	"finder.h"
+	"sort.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\utils\fruitcase.cpp
+	"FruitCase.h"
+	<iostream>
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\utils\fruitguiness.cpp
+	"FruitGuiness.h"
+	"FruitAccountant.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\utils\fruitguiness.h
+	"FruitAccountant.h"
+	"finder.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\utils\fruitmagazine.cpp
+	"FruitMagazine.h"
+	"FruitCase.h"
+
+1579277659 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\utils\miniopt.cpp
+	"MiniOpt.h"
+	<iostream>
+	"sort.h"
+	"FruitAccountant.h"
+
+1579277659 c:\users\stach\desktop\repo\pcmax\pcmax\include\utils\miniopt.h
+	"FruitAccountant.h"
+
+1579302336 source:c:\users\stach\desktop\repo\pcmax\pcmax\src\algs\metropolis.cpp
+	"Metropolis.h"
+	<stdlib.h>
+	<ctime>
+	<fstream>
+	<iostream>
+	"FruitPicker.h"
+	"FruitBins.h"
+	"zach2.h"
+
+1579302055 c:\users\stach\desktop\repo\pcmax\pcmax\include\algs\metropolis.h
+	"FruitPicker.h"
+	"FruitBins.h"
+	"FruitQualifier.h"
+	"Guiness.h"
+	"zach2.h"
 

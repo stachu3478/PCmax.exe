@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m25.txt greedy3" />
+				<Option parameters="solve gen_file.txt metropolis C:/Users/stach/OneDrive/Pulpit/instances/m25.txt greedy3" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />
@@ -62,6 +62,7 @@
 		<Unit filename="include/Processor.h" />
 		<Unit filename="include/TGraph.h" />
 		<Unit filename="include/algs/AntColony.h" />
+		<Unit filename="include/algs/Metropolis.h" />
 		<Unit filename="include/helpers/Guiness.h" />
 		<Unit filename="include/libs/finder.h" />
 		<Unit filename="include/sort.h" />
@@ -87,6 +88,7 @@
 		<Unit filename="src/Processor.cpp" />
 		<Unit filename="src/TGraph.cpp" />
 		<Unit filename="src/algs/AntColony.cpp" />
+		<Unit filename="src/algs/Metropolis.cpp" />
 		<Unit filename="src/helpers/Guiness.cpp" />
 		<Unit filename="src/libs/finder.cpp" />
 		<Unit filename="src/sort.cpp" />
