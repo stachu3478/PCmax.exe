@@ -1,6 +1,7 @@
 #ifndef ZACH2_H
 #define ZACH2_H
 
+#include "FruitMagazine.h"
 
 class zach2
 {
@@ -11,6 +12,17 @@ class zach2
     protected:
 
     private:
+        int nProcessors;
+        int nTasks;
+        int cMaxLimit;
+        int taskSum;
+        unsigned int* tasks;
+        int* pBind;
+        int* sumP;
+        FruitMagazine* procJobs;
+
+        void bind1();
+        void bind2();
 };
 
 #endif // ZACH2_H

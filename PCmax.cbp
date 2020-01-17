@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m50.txt acoflat" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/m25.txt greedy3" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />

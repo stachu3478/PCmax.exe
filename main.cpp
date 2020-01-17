@@ -38,6 +38,7 @@ void printUsage(char* name)
         << "    <type> algorithm type you want to use. Available ones are:\n"
         << "    greedy - Tries to solve in the fastest way. Used by default.\n"
         << "    greedy2 - Some other point of view.\n"
+        << "    greedy3 - greedy2 v2\n"
         << "    presort - Sorts the array of tasks and then runs greedy algorithm.\n"
         << "    aco - Uses graph system and ant behavioral system.\n"
         << "    acosort - aco with task pre-sorting.\n"
