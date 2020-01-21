@@ -8,14 +8,42 @@
 #include "FruitPicker.h"
 #include "FruitBins.h"
 #include "zach2.h"
+#include "FruitMagazine.h"
 
 using namespace std;
+
+void Metropolis::save()
+{
+    int nJobs = greedy->getJobCount();
+    for (int i = 0; i < nJobs; i++)
+        bestQueue[i] = decisionQueue[i];
+    load();
+}
+
+void Metropolis::load()
+{
+    cout << "Best solution: " << endl;
+    int nJobs = greedy->getJobCount();
+    FruitMagazine* procJobs = new FruitMagazine(nProcs, 10);
+    int* tasks = greedy->getTasks();
+    greedy->reset();
+    for (int i = 0; i < nJobs; i++)
+    {
+        int assigned = greedy->step(
+            bestQueue[i] == 1
+        );
+        procJobs->add(assigned, tasks[i]);
+    }
+    procJobs->printContents();
+    cout << "Decisions: \n";
+    for (int i = 0; i < nJobs; i++)
+        cout << bestQueue[i] << " ";
+}
 
 int Metropolis::standardIteration()
 {
     greedy->pointRec(0);
     greedy->reset();
-    int nJobs = greedy->getJobCount();
     int lastDecision; // Brak wplywu
     greedy->step(true);
     for (int i = 1; i < nJobs; i++)
@@ -29,10 +57,11 @@ int Metropolis::standardIteration()
 
 int Metropolis::acoIteration()
 {
-    int nJobs = greedy->getJobCount();
     int solution = standardIteration();
     for (int j = 1; j < nJobs - 1; j++)
         feromon->grow((j << 1) + (decisionQueue[j] ? 1 : 0), decisionQueue[j + 1] ? 1 : 0, worstGreedy - solution);
+    if (greedy->wasRecord())
+        save();
     return solution;
 }
 
@@ -42,23 +71,23 @@ int Metropolis::dryRun()
     greedy->reset(); // Brak wplywu
     greedy->step(true);
     int lastDecision = 1;
-    for (int i = 1; i < greedy->getJobCount(); i++)
+    for (int i = 1; i < nJobs; i++)
     {
         lastDecision = feromon->getBiggest((i << 1) + lastDecision, boolGroup, 2);
         greedy->step(
             lastDecision == 1
         );
         decisionQueue[i] = lastDecision;
-        // cout << lastDecision << endl;
     }
     return greedy->getSolution();
 }
 
 int Metropolis::wetRun() {
     int solution = dryRun();
-    int nJobs = greedy->getJobCount();
     for (int j = 0; j < nJobs; j++)
         feromon->grow((j << 1) + (decisionQueue[j] ? 1 : 0), decisionQueue[j + 1] ? 1 : 0, worstGreedy - solution);
+    //if (greedy->wasRecord())
+    //    save();
     return solution;
 }
 
@@ -66,8 +95,6 @@ Metropolis::Metropolis(char* file)
 {
     ifstream source(file);
     cout << "File opened\n";
-    int nProcs;
-    int nJobs;
     source >> nProcs;
     source >> nJobs;
     cout << "Processors defined: " << nProcs << " Jobs: " << nJobs << endl;
@@ -78,6 +105,7 @@ Metropolis::Metropolis(char* file)
     boolGroup[0] = 0;
     boolGroup[1] = 1;
     decisionQueue = new bool[nJobs];
+    bestQueue = new bool[nJobs];
 
     int* jobTime = new int[nJobs];
     totalTime = 0;
@@ -118,12 +146,13 @@ Metropolis::Metropolis(char* file)
     for (int j = 0; j < 100000; j++)
     {
         for (int i = 0; i < 10; i++)
-            if (wetRun() == limit)
+            if (acoIteration() == limit)
                 break;
-        if (acoIteration() == limit)
+        if (wetRun() == limit)
             break;
     }
     recorder->report();
+    load();
 }
 
 Metropolis::~Metropolis()

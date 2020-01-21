@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
         srand(time(NULL));
 
         if (type == "greedy") Processor::solve(file, o);
-        else if (type == "presort") Processor::solveSorted(file, O);
+        else if (type == "presort") new zach2(file, 3);
         else if (type == "aco") new AntSolver(file, false);
         else if (type == "acosort") new AntSolver(file, true);
         else if (type == "greedy2") new zach2(file, 0);

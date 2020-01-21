@@ -14,10 +14,11 @@ class zach2
         void bind2();
         void bind3();
         void reset();
-        void step(bool bclpi);
+        int step(bool bclpi);
         int getJobCount() { return nTasks; };
         int getSolution();
         int getLimit() { return cMaxLimit; };
+        int* getTasks() { return tasks; };
 
         void setRecorder(Guiness* r) { recorder = r; };
         void pointRec(int id) { recordPtr = id; };

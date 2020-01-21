@@ -30,12 +30,18 @@ class Metropolis
         int totalTime;
         FruitQualifier* feromon;
         bool* decisionQueue;
+        bool* bestQueue;
         int* boolGroup;
+        int nProcs;
+        int nJobs;
 
         zach2* greedy;
 
         int worstGreedy;
         Guiness* recorder;
+
+        void save();
+        void load();
 };
 
 #endif // METROPOLIS_H

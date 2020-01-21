@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="solve gen_file.txt metropolis C:/Users/stach/OneDrive/Pulpit/instances/m25.txt greedy3" />
+				<Option parameters="solve C:/Users/stach/OneDrive/Pulpit/instances/gen_file.txt metropolis" />
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="include" />

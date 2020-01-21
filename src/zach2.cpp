@@ -16,7 +16,7 @@ void zach2::reset()
 }
 
 // Before-Critical Least Processor Index
-void zach2::step(bool bclpi)
+int zach2::step(bool bclpi)
 {
     int cMin = 99999999;
     int assigned = false;
@@ -29,9 +29,7 @@ void zach2::step(bool bclpi)
             sumP[nP] = afterAddSum;
             pBind[pos++] = nP;
             assigned = true;
-            // procJobs->add(nP, tasks[pos++]);
-            // cout << "Assigned " << nP << " " << tasks[pos++] << endl;
-            break;
+            return nP;
         }
         if (afterAddSum < cMin)
         {
@@ -43,9 +41,9 @@ void zach2::step(bool bclpi)
     {
         sumP[cMinIndex] = cMin;
         pBind[pos++] = cMinIndex;
-        // cout << "Not assigned " << cMinIndex << endl;
-        // procJobs->add(cMinIndex, tasks[pos++]);
+        return cMinIndex;
     }
+
 }
 
 void zach2::bind1()
@@ -90,15 +88,25 @@ int zach2::getSolution()
 void zach2::bind2()
 {
     reset();
+    procJobs = new FruitMagazine(nProcessors, 100);
     for (unsigned int j = 0; j < nTasks; j++)
-        step(true);
+    {
+        int ass = step(true);
+        procJobs->add(ass, tasks[j]);
+    }
+    procJobs->printContents();
 }
 
 void zach2::bind3()
 {
     reset();
+    procJobs = new FruitMagazine(nProcessors, 100);
     for (unsigned int j = 0; j < nTasks; j++)
-        step(false);
+    {
+        int ass = step(false);
+        procJobs->add(ass, tasks[j]);
+    }
+    procJobs->printContents();
 }
 
 void zach2::init()
@@ -135,7 +143,6 @@ zach2::zach2(char* file, int type)
     sumP = new int[nProcessors];
     pBind = new int[nTasks];
     recorder = new Guiness(2, 999);
-    // procJobs = new FruitMagazine(nProcessors, 100);
     for (unsigned int i = 0; i < nTasks; i++)
     {
         source >> tasks[i];
@@ -150,6 +157,8 @@ zach2::zach2(char* file, int type)
         bind2();
     else if (type == 2) for (unsigned int j = 0; j < nTasks; j++)
         step((rand() % 2) == 1);
+    else if (type == 3)
+        bind3();
     else return;
 
     // procJobs->printContents();
